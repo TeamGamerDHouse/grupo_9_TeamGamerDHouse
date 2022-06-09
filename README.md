@@ -28,7 +28,7 @@ Interés: Videojuegos, streamers, tendencias y computación.
 
 ● Una breve descripción de los integrantes del equipo.
 Mariana Chávez: Estoy descubriendo que es lo que más me gusta del curso.
-Daniel Usuga: 
+Daniel Usuga: Me llama mucho la atencion todo lo relacionado con la programacion por eso estoy en el curso fullstack para aprender de todo.
 Javier Garcia Rios: Busco desarrollarme en IT, aprender una nueva forma de pensar.
 Wendy Dionisio: Me interesa el frontend y el diseño UX. Mi desafío va a ser el backend y la lógica.
 
