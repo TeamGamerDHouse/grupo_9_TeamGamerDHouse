@@ -1,0 +1,187 @@
+* {
+    
+    box-sizing: border-box;
+
+}
+
+/*HEADER por orden de aparicion*/
+
+header{
+    display: block;
+    background-image: url("public/image/Logo/matrix-g286afe9a1_1920.jpg");
+
+    width: 100%;
+    background-color: #00aae4;
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+    
+}
+
+
+
+.main-header{
+    display:block
+}
+    
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    
+
+
+    
+}
+
+
+.logo{
+
+    width: 50%;
+    border-radius: 50%;
+    
+    
+}
+.header-bajo{
+    display: none;
+
+}
+.logobaner{
+    width: 100%;
+
+}
+
+
+
+.header-bajo{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.header-bajo ul {
+    width: 100%;
+    margin: center;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin: 15px;
+   
+}
+.barrasearch{
+    
+    margin-top: 50px;
+
+}
+.login-carro{
+    
+    display: flex;
+}
+/*
+    width: auto;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    justify-content: space-between;
+    text-decoration: none;
+
+}
+*/
+nav ul li a{
+
+    font-family:monospace;
+    font-style: oblique;
+    font-weight: 200;
+    color: bisque;
+    text-decoration-color: black;
+    text-decoration: none;
+    width: 100%;
+    border-color: solid 3px black;
+   
+}
+.barras{
+    
+}
+
+
+
+/* foooter*/
+
+footer{
+
+    background-color: #00aae4;
+    width: 100%;
+    max-width: 1200;
+    
+
+}
+.contactos{
+    font-size: 12px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: 200;
+
+
+}
+
+footer ul{
+
+    list-style-type: none;
+    padding: 0;
+    
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+
+}
+.redes i{
+
+    font-size: 25px;
+    color: black;
+}
+
+.pielista{
+    display: flex;
+    justify-content: space-around;
+
+}
+.pielista li a{
+
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-family: monospace;
+    font-style:italic;
+    font-weight: bolder;
+    font-variant-ligatures: contextual;
+
+}
+
+.cel{
+    font-size: 20px;
+}
+
+
+
+    
+
+
+
+
+    
+
+
+
+
