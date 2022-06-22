@@ -1,117 +1,225 @@
-* {
-    
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 
 }
 
-/*HEADER por orden de aparicion*/
+body{
+    font-family: 'roboto', sans-serif;
+    margin: 0;
+}
+h2{
+    font-size: 2.7em;
+}
+h3{
+    font-size: 2em;
+}
+p{font-size: 1.25em;}
 
+ul{list-style: none;}
+li{font-size: 1.45em;}
+
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: rgb(0, 0, 0);
+    background-color: rgb(157, 147, 167);
+
+    
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(52, 25, 209);
+    
+}
+.container{
+    max-width: 1200;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+   
+}
 header{
-    display: block;
-    background-image: url("public/image/Logo/matrix-g286afe9a1_1920.jpg");
+    background-color: rgb(8, 8, 8);
+
+}
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+
+  
+
+}
+header .logo img{
 
     width: 100%;
-    background-color: #00aae4;
-    font-size: 16px;
-    padding: 5px;
-    color: white;
-    
-}
-
-
-
-.main-header{
-    display:block
-}
+    height: 100%;
     
 
-.header-top{
+}
+header .container{
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     
 
+}
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+header a{
+    
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'roboto';
 
+
+    
+
+}
+header a:hover{
+    color: blueviolet;
+
+}
+
+header nav ul li{
+    display: inline-block;
+    margin: 20px;
+    color: aliceblue;
+
+}
+header nav ul li{
+    
+    cursor: pointer;
     
 }
 
-
-.logo{
-
-    width: 50%;
-    border-radius: 50%;
-    
+.gamesps .container{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     
 }
-.header-bajo{
+.gamesps p{
     display: none;
 
 }
-.logobaner{
-    width: 100%;
-
-}
-
-
-
-.header-bajo{
-    width: 100%;
-    margin: auto;
-    align-items: center;
+.gamesps .container h2{
+   
     text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.gamesps .card{
+
+   
+    border: rgb(243, 9, 204) 2px solid;
+    border-radius: 20px;
+    margin:auto;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: azure;
+    color: black;
+    
+    
+    }
+
+    .gamesps h2{
+        text-align: center;
+        font-weight: bolder;
+        font-style: italic;
+        color: blueviolet;
+        background: rgb(202, 199, 199);
+
+
+    }
+
+    /*note*/
+
+.notebooks .container{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
     
 }
+.notebooks p{
+    display: none;
 
-.header-bajo ul {
-    width: 100%;
-    margin: center;
-    list-style: none;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    margin: 15px;
+}
+.notebooks .container h2{
    
+    text-align: center;
+    color: blueviolet;
+    font-weight: bold;
+    font-style: italic;
 }
-.barrasearch{
-    
-    margin-top: 50px;
 
-}
-.login-carro{
-    
-    display: flex;
-}
-/*
-    width: auto;
-    display: flex;
-    margin: auto;
-    padding: 10px;
-    justify-content: space-between;
-    text-decoration: none;
+.notebooks .container .card{
 
-}
-*/
-nav ul li a{
-
-    font-family:monospace;
-    font-style: oblique;
-    font-weight: 200;
-    color: bisque;
-    text-decoration-color: black;
-    text-decoration: none;
-    width: 100%;
-    border-color: solid 3px black;
    
-}
-.barras{
+    border: rgb(243, 9, 204) 2px solid;
+    border-radius: 20px;
+    width: 250px;
+    margin:auto;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: azure;
+    color: black;
     
-}
+    
+    }
+
+    .notebooks h2{
+        text-align: center;
+        font-weight: bolder;
+        font-style: italic;
+        color: blueviolet;
+        background: rgb(202, 199, 199);
+
+
+    }
+    .notebooks img{
+        width: 60%;
+    }
+
+    section .menu-main{
+        display: none;
+        
+    }
+
+    section .menu-top{
+        display:flex;
+        
+
+    }
+
+
+
+
 
 
 
@@ -149,7 +257,10 @@ footer ul{
 .redes i{
 
     font-size: 25px;
-    color: black;
+    color: rgb(228, 213, 213);
+    border: 3px solid rgb(255, 252, 252);
+    padding: 3px;
+    border-radius: 15px;
 }
 
 .pielista{
@@ -176,6 +287,56 @@ footer ul{
 
 
     
+@media (min-width:769px){
+
+
+    .gamesps .card p{
+        display:block;
+        font-size: 18px;
+        color: rgb(42, 209, 42);
+        font-weight: bold;
+        margin-bottom: 15px;
+
+    }
+    .notebooks .card p{
+        display:block;
+        font-size: 18px;
+        color: rgb(42, 209, 42);
+        font-weight: bold;
+        margin-bottom: 15px;
+
+    }
+    section .menu-top{
+        margin: 20px;
+        list-style: circle;
+       
+        
+    }
+    
+        
+             
+        
+    }
+    .categoria{
+    
+        width: 50%;
+        margin-bottom: 15px;
+        text-align: center;
+        align-items: center;
+      
+          
+    
+    }
+    
+    
+
+   
+
+
+    
+
+
+
 
 
 
