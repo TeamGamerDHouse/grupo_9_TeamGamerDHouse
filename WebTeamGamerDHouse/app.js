@@ -12,23 +12,23 @@ app.use(express.static(publicPath));
 
 
 // RUTEO
-app.get("/", (req, res)=>{
-    res.sendFile(path.join(__dirname, "./views/index.html"));
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname, './views/index.html'));
 })
-app.get("/login",(req, res)=>{
-    res.sendFile(path.resolve(__dirname, "./views/login.html"));
-})
-
-app.get("/carritocompra", (req, res)=>{
-    res.sendFile(path.resolve(__dirname, "./views/carritocompra.html"));
-})
-app.get("/detalleproductos",(req, res)=>{
-    res.sendFile(path.join(__dirname,"./views/detalleproductos.html"));
+app.get('/login', (req, res)=>{
+    res.sendFile(path.join(__dirname, './views/login.html'));
 })
 
-app.get("/registro",(req, res)=>{
+app.get('/carritocompra', (req, res)=>{
+    res.sendFile(path.join(__dirname, './views/carritocompra.html'));
+})
+app.get('/detalleproductos', (req, res)=>{
+    res.sendFile(path.join(__dirname,'./views/detalleproductos.html'));
+})
 
-    res.sendFile(path.resolve(__dirname,"./views/register.html"));
+app.get('/registro', (req, res)=>{
+
+    res.sendFile(path.join(__dirname,'./views/register.html'));
 
 })
 
