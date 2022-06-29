@@ -1,0 +1,213 @@
+.formulario{
+    display: flex;
+    text-align: left;
+    font-family: Roboto;
+    width: 350px;
+    height: 550px;
+    color: #1162ac;
+}
+.color{
+    background:radial-gradient(200px top, ellipse, white, #1162ac, black);
+    color: #1162ac;
+}
+.encabezado {
+    width: 100% ;
+    display: flex;
+   height: 150px;
+   justify-content: space-between;
+   background-color: #1162ac;
+   background:radial-gradient(200px top, ellipse, white, #1162ac, black);
+  
+}
+
+.inicio{
+    background-color: #65FBA5;
+    font-family: 'M PLUS 1p', sans-serif;
+    width: 190px;
+    font-weight: bold;
+}
+
+.logo{
+  border-radius: 70px;
+background-image: radial-gradient(circle, rgba(0,249,255,1) 39%, rgba(51,56,57,1) 96%);
+
+ 
+  }
+  
+    
+
+.logo-registro{
+  background-color:rgb(255,0,0);
+  background:radial-gradient(200px top, ellipse, white, #1162ac, black);
+  color: #1162ac;
+  
+}
+
+
+
+* {box-sizing: border-box;}
+body{
+    font-family:'M PLUS 1p', sans-serif; 
+    color: #1162ac;
+    background-color: #1162ac;
+}
+
+
+h1{
+    text-align: center;
+    color: white;
+}
+form {
+  height: 550px;
+  width: 300px;
+  margin: 60px auto;
+  border-radius: 8px
+}
+button{
+  text-align: right;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.58);}
+
+.button{
+  background-color: #65FBA5;
+  border: none;
+  color: blanco;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 10px;
+ 
+}
+
+.button:hover {
+  background-color: #00FA6E;
+  transform: translateY(-15px);
+  transition-property: transform;
+  transition-duration: 500ms;
+  cursor: pointer;
+  text-align: left;
+}
+
+
+
+form h1 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-top: 64px;
+}
+
+form p {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-top: -5px;
+  text-align: left;
+}
+form p>a{color:#ffffff;text-decoration: none;transition: 0.3s }
+form p>a:hover{color: #1da1f2}
+form p>a:active{color: #1da1f2 }
+
+
+.input-info {margin-top: 30px;margin-bottom: 15px}
+input[type="text"],input[type="email"],input[type="password"]  {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    background: none;
+    color: #fff;
+    margin: 5px 5px 5px 17px;
+    outline: none;
+    transition: 0.3s;
+    text-indent: 15px;
+    overflow: hidden;
+}
+ 
+.fa-refresh, .fa-lock, 
+.fa-envelope, .fa-user-plus, 
+.fa-user {
+    position: absolute;
+    margin-top: 14px;
+    margin-left: 24px;
+    color: #ffffff;
+    display: block;
+}
+
+.input-info input:hover{background: #435688}
+.input-info input[type="checkbox"] {margin-left: 17px;cursor: pointer;margin-top: 7px}
+.input-info span {color: #ffffff;font-size: 11px;}
+.input-info span>a{color:#1da1f2 }
+.input-info span>a:hover{color:#fff }
+
+.log-sign{text-align: center;}
+.login{
+    padding: 10px;
+    margin-top: 16px;
+    background: #435688;
+    color: #fff;
+    width: 103px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid #435688;
+    outline: none;
+}
+.signup {
+  background: #9e3434;
+  border: 1px solid #9e3434;
+}
+
+
+.log-sign .signup>a{color: #fff;text-decoration: none;}
+.log-sign button:hover{
+   background:none;
+   border:1px solid #ffffff;
+   color: #ffffff;
+}
+
+.send{
+    padding: 10px;
+    margin-top: 16px;
+    background: #435688;
+    color: #fff;
+    width: 103px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid #435688;
+    outline: none;
+    margin-left: 32%
+}
+
+
+
+.social-media{margin-bottom: 25px;}
+.social-media .btn1 {
+  border: 0;
+  background: #3B5998;
+  color: #fff;
+  padding: 15px;
+  width: 90%;
+  margin-left: 16px;
+  margin-top: 14px;
+  border-radius: 5px;
+
+}
+.social-media .btn2 {
+  border: 0;
+  padding: 15px;
+  margin-top: 11px;
+  width: 90%;
+  margin-left: 16px;
+  border-radius: 5px;
+  background:  red;
+  color: #fff;
+
+}
+.social-media button>a{color: #fff;text-decoration: none;}
+
+.forget-password {text-align: center;}
+.forget-password a {color: #1da1f2;transition: 0.3s;text-decoration:underline;}
+.forget-password a:hover{color: #fff}
+.forget-password a:active{color: #fff}

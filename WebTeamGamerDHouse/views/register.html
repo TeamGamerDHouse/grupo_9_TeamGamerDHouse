@@ -4,9 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registro en wer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Joan&family=Montserrat:ital,wght@0,200;0,300;1,200&family=Roboto:ital,wght@0,300;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <script src="https://kit.fontawesome.com/fb9ec8629a.js" crossorigin="anonymous"></script>
+     
+    <title>TeamGamerDHouse</title>
 </head>
 <body>
-    registro en web
+    <header>
+        <div class="container">
+            <div class="logos">
+                <img src="image/Logo/logoTeamGamerDHouse.jpeg" class="logo" alt="logo">
+            </div>
+            <div class="search">
+                <input type="search" name="search" id="search" placeholder="Que producto buscas?">
+            </div>
+            <nav class="indice">
+                <ul>
+                    <li><a href="/login"></a>INGRESA <i class="fa-duotone fa-arrow-down-to-square"></i></li>
+                    <li><a href="/carritocompra"></a>COMPRA <i class="fa-solid fa-cart-shopping"></i></li>
+                </ul>
+            </nav>
+        </div> 
+   
+         
+    </header>
+
+    <main>
+        <div class="box"> 
+            <div class="formulario">
+    
+                <form id="form-login" action="#" method="post" >
+                    <p><label for="nombre">Nombre:</label>
+                        <input name="nombre" type="text" id="nombres" class="nombres" placeholder="Juan Antonio" ></p> 
+    
+                   <p><label for="apellido">Apellidos:</label>
+                        <input name="apellidos" type="text" id="apellidos" class="apellidos" placeholder="Perez" /></p>
+    
+                     <p><label for="telefono">telefono:</label>
+                        <input name="telefono" type="text" id="telefono" class="telfono" placeholder="+541123456789" /></p>
+                    
+    
+                    <p><label for="correo">Correo:</label>
+                        <input name="correo" type="text" id="correo" class="correo" placeholder="email@email.com" /></p>
+    
+                    <p><label for="pass">Password:</label>
+                        <input name="pass" type="password" id="pass" class="contraseña" placeholder="Contraseña" /></p>
+    
+                    <p><label for="repass">Repetir Password:</label>
+                        <input name="repass" type="password" id="repass" class="repass" placeholder="Repite contraseña" /></p>
+    
+                       <br>
+                     
+                        <p id="bot"> <input class="button" type="submit" value="CREAR CUENTA"> </p>
+                </form>
+            </div>
+         </div>   
+
+    </main>
+
+    <footer>
+
+    <section class="contactos">
+        <h2><marquee >Seguinos en las Redes</marquee> </h2>
+            <div class="redes">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+  
+             </div>
+                
+            <div>
+                <ul class="cel">
+                  <li class="iconowas">Whatsapp <i class="fa-brands fa-whatsapp"></i></li>
+             
+                                                                        
+                    </ul>
+               </div>
+
+    </section>
+
+    <section>
+        <div class="pie">
+                <ul class="pielista">
+                    <li><a href="#">Quienes Somos</a></li>
+                    <li><a href="#">Locales</a></li>
+                    <li><a href="#">Todas las categorias</a></li>
+                </ul>
+        </div>
+    </section>          
+
+</footer>
 </body>
 </html>
