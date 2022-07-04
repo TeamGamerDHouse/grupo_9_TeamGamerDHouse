@@ -4,89 +4,144 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo/logoTeamGamerDHouse">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Joan&family=Montserrat:ital,wght@0,200;0,300;1,200&family=Roboto:ital,wght@0,300;1,100;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    
     <script src="https://kit.fontawesome.com/fb9ec8629a.js" crossorigin="anonymous"></script>
      
     <title>TeamGamerDHouse</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logos">
-                <img src="image/Logo/logoTeamGamerDHouse.jpeg" class="logo" alt="logo">
-            </div>
-            <div class="search">
-                <input type="search" name="search" id="search" placeholder="Que producto buscas?">
-            </div>
-            <nav class="indice">
-                <ul>
-                    <li><a href="/login"></a>INGRESA <i class="fa-duotone fa-arrow-down-to-square"></i></li>
-                    <li><a href="/carritocompra"></a>COMPRA <i class="fa-solid fa-cart-shopping"></i></li>
-                </ul>
-            </nav>
-        </div> 
-   
-         
-    </header>
-    <main>
+    <header id="main-header">
+
+        <picture id="brand">
+            <img src="/image/Logo/logoTeamGamerDHouse.jpeg" id="logo" alt="logo">
+        </picture>
+      
+        <form class="search-box">
+          <input class="search-texto" type="search" name="search" id="search" placeholder="Que producto buscas?">
+          <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      
+        <nav class="navigation" id="nav-user">
+          <a href="/login"> <i class="fa-solid fa-user"></i> Mi cuenta </a>
+          <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i>Mi carrito</a>
+        </nav>
+      
+        <nav class="navigation" id="main-nav">
+          <a href="#menu"><i class="fa-solid fa-bars"></i> Buscar por categoria</a>
+          <a href="/">Ofertas</a>
+          <a href="/productos">Productos</a>
+          <a href="/categoria/accesorios">Accesorios</a>
+        </nav>
+      
+        <nav id="menu">
+            <a  href="#"> <i class="fa-solid fa-times"></i></a>
+          <a href="/categoria/notebooks">Notebooks</a>
+          <a href="/categoria/computadoras">Computadoras</a>
+          <a href="/categoria/componentes">Componentes</a>
+          <a href="/categoria/accesorios">Accesorios</a>
+        </nav>
+      
+      </header>
+
+      <!--Empieza el contenido-->
+      <main>
+
+        <picture id="portada">
+            <img src="/image/portada/portada-juegos.jpg"  alt="portada-juegos">
+        </picture>
         
-        <section class="gamesps">
+
+
+        <section class="products" id="gamesps">
             <h2>GAMES</h2>
-            <div class="container">
-                <div class="card">
-                    <img src="image/Logo/Destini.jpg" alt="">
-                    <h3>Nuevo Producto</h3>
-                    <p>Precio: $ 7899.00</p>
-                    <button>+ INFO</button>
-                </div>
-                <div class="card">
-                    <img src="image/Logo/Destini.jpg" alt="">
-                    <h3>Nuevo Producto</h3>
-                    <p>Precio: $ 7899.00</p>
-                    <button>+ INFO</button>
-                </div>
-                <div class="card">
-                    <img src="image/Logo/resident.jpg" alt="">
-                    <h3>Nuevo Producto</h3>
-                    <p>Precio: $ 7899.00</p>
-                    <button>+ INFO</button>
-               </div>
-                <div class="card">
-                    <img src="image/Logo/resident.jpg" alt="">
-                    <h3>Nuevo Producto</h3>
-                    <p>Precio: $ 7899.00</p>
-                    <button>+ INFO</button>
-                </div>
-                
-        </div>
+            <ul class="product-list">
+          <li class="product-card">
+            <picture>
+                <img src="/image/Logo/Destini.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+          <li class="product-card">
+             <picture>
+                <img src="/image/Logo/Destini.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+          <li class="product-card">
+             <picture>
+                <img src="/image/Logo/resident.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+          <li class="product-card">
+            <picture>
+                <img src="/image/Logo/resident.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"><i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+        </ul>
         </section>
-        <section class="notebooks">
-            <h2>NOTEBOOKS</h2>
-            <div class="container">
-                
-                <div class="card">
-                   <img src="image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
-                    <h3>Nuevo Producto</h3>
-                    <p>Precio: $140.000</p>
-                    <button>+ INFO</button>
-                </div>
-                <div class="card">
-                    <img src="image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
-                    <h3>Nuevo Producto</h3>
-                    <p>Precio: $250.000</p>
-                    <button>+ INFO</button>
-                </div>
-            </div>
-
-
+        <section class="products" class="notebooks">
+               <h2>NOTEBOOKS</h2>
+          <ul class="product-list">
+            <li class="product-card">
+              <picture>
+                <img src="/image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
+              </picture>
+              <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 140.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+                </nav>
+              </article>
+            </li>
+            <li class="product-card">
+              <picture>
+                <img src="/image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
+              </picture>
+              <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 250.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+                </nav>
+              </article>
+            </li>
+          </ul>
         </section>
-
-
     </main>
-   
+    
+    
    
    <footer>
     
