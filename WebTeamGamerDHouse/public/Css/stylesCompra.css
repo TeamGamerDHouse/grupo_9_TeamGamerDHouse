@@ -1,0 +1,148 @@
+.mainContainerCompra{
+    background: rgb(221, 220, 220);
+    box-sizing: border-box;
+
+}
+.menuCompra{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+    margin: auto;
+    text-align: center;
+
+}
+.menuCompraTitulo h1{
+    
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    padding: 5px;  
+    font-family: monospace;
+
+}
+.navMenuCompra{
+    
+    padding: 10px;
+
+}
+.navMenuCompra a{
+    text-decoration: none;
+}
+.navMenu{
+    
+    text-align: left;
+    padding-left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'roboto';
+    text-shadow: 0px;
+    background: grey;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-right-style: groove;
+    border-top-right-radius: 35px;
+    margin-top: 3px;
+        
+}
+.navMenu:hover{
+    cursor: pointer;
+    background: black;
+    color: rgb(71, 250, 71);
+    font-style: italic;
+    text-align: justify;
+    transition: 5ms;
+    padding-left: 15px;
+        
+}
+.productosCompra{
+    box-sizing: border-box;
+
+    
+}
+
+.tablaDeCompra{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+    position: relative;
+
+
+}
+.tablaDeCompra thead{
+    width: 80%;
+}
+
+.tableHeader{
+
+    display: flex;
+    flex-direction: column;
+   
+    margin-top: 5px;
+
+
+}
+
+.tabla{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    
+}
+
+.th_producto, .th_canti, .th_precio, .th_Subto, .vacio{
+
+    margin-top: 25px;
+    height: 40px;
+    margin-right: 10px;
+    border-bottom: 1px solid white;
+        
+}
+.tbody{
+    width: 80%;
+    align-items: center;
+    
+    
+
+
+}
+.tabla .prImg{
+
+    height: 25px;
+    object-fit: contain;
+
+    
+
+    
+
+}
+
+.detallePro, .prCantidadm, .prPrecio, .prSubto .eliminar{
+
+    margin-top: 25px;
+    height: 40px;
+    margin-right: 10px;
+    border-bottom: 1px solid white;
+}
+
+
+.prCantidadm{
+    margin-top: 10px;
+    width: 70%;
+}
+
+.prNombre{
+    text-align: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
