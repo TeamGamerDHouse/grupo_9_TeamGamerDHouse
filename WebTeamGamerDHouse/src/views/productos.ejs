@@ -6,7 +6,22 @@
     
     <main class="containerProductos">
 
-        <h3>Pagina en Construccion</h3>
+        <h2> lista de Productos </h2>
+            <% if(Array.isArray(allProducts)){%>
+                <% for(let i=0;i < allProducts.length; i++){%>
+                 <li>
+                        <p>
+                            <h5>Name: <%= allProducts[i].nombreProducto%></h5>
+                        </p>
+                        <p>
+                            <h5>Precio: <%= allProducts[i].precio%></h5>
+                        </p>
+                    </li>
+                <%}%>
+            <%}else{%>
+        <h3>Name: <%= user.name%></h3>
+        <h3>E-mail: <%= user.email%></h3>
+    <%}%>
         
  
     </main> 
