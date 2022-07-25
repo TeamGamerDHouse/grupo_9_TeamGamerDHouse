@@ -1,4 +1,4 @@
-.formulario{
+/*.formulario{
     display: flex;
     text-align: left;
     font-family: Roboto;
@@ -211,3 +211,50 @@ input[type="text"],input[type="email"],input[type="password"]  {
 .forget-password a {color: #1da1f2;transition: 0.3s;text-decoration:underline;}
 .forget-password a:hover{color: #fff}
 .forget-password a:active{color: #fff}
+*/
+
+.login{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: white;
+
+  
+
+}
+
+section .loginTitulo{
+  
+  text-align: center;
+  font-family: 'roboto';
+  font-size: medium;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  
+}
+.formulariologin{
+
+  border: 1px solid violet;
+  margin: 25px;
+  background-color: darkslategray;
+
+}
+
+.formLogin{
+  border: black 1px  solid;
+  width: 70%;
+  height: 30px;
+  padding: 5px;
+  margin: auto; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.loginform i{
+  margin: auto;
+  color:b 
+
+  
+}
+

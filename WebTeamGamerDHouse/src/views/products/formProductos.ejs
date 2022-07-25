@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs')%>
+    <body>
+        <%- include('../partials/header.ejs')%>
+        
+        <main class="registro">
+            <h2>Formulario de Carga de Productos</h2>
+            
+            <form  class="formularioRegistro" action="#" method="post">
+                <div class="etiqueta">
+                    <label>Categoria</label>
+                        <select  class="input" name="Categoria">
+                            <option value="categoria">Categoria</option>
+                                <option value="gameps4">Games PS4</option>
+                                <option value="gameps5">Games PS5</option>
+                                <option value="Gamesxbox">Games XBOX</option>
+                                <option value="notebook">Notebook</option>
+                                <option value="accesorios">Accesorio PC</option>
+                                <option value="mobiliario">Accesorios Mobiliario</option>
+                        </select>
+                       
+                
+                    </div>
+                <div class="etiqueta">
+                    <label>Nombre Producto</label>
+                    <input class="input" type="text" name="producto" placeholder="Ingrese su nombre">
+                </div>
+                <div class="etiqueta">
+                    <label >Descripcion</label>
+                    <input class="input" type="text" name="descripcion" placeholder="descripcion del producto">
+                </div>
+                <div class="etiqueta">
+                    <label>Precio:</label>
+                    <input class="input" type="number" name="precio"placeholder="ingrese precio">
+            </div>
+                    
+            <div class="etiqueta">
+                    <label>Ingresar Foto del Articulo</label>
+                        <input  class="input" type="file" name="fotoArticulo" >
+            </div> 
+                
+            </div>
+            
+            
+                <input  class="botonEnvio" type="submit" value="Registrarme">
+            
+            
+
+
+
+        </form>
+
+    
+
+
+
+    </main>
+
+<%- include('../partials/footer.ejs')%>
+</body>
+
+</html>

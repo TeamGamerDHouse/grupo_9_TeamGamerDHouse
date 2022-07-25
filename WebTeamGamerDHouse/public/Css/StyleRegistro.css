@@ -1,0 +1,139 @@
+.registro{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    background: black;
+}
+    
+.registro h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: 'calibri';
+    text-align: center;
+    padding-top: 40px;
+    border-bottom: 1px solid white;
+
+    
+}
+.formularioRegistro{
+
+    width: 70%;
+    
+    padding: 30px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    
+}
+.formularioRegistro .etiqueta{
+
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: 'calibri';
+    font-size: 18px;
+    text-align: center;
+    
+
+
+
+}
+.formularioRegistro .input{
+
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid blue;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+
+
+
+}
+.formularioRegistro .input :hover{
+    cursor: pointer;
+
+}
+
+.formularioRegistro p{
+    text-align: center;
+    font-family: 'calibri';
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px;
+    
+}
+.formularioRegistro p a{
+    text-decoration: none;
+    color: white;
+    font-family: 'calibri';
+    font-size: 20px;
+
+}
+.formularioRegistro p a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.botonEnvio{
+
+    width: 100%;
+    background: #24303c;
+    height: 40px;
+    color: white;
+    font-family: 'calibri';
+    font-size: 22px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 20px;
+    
+    
+
+    
+}
+.botonEnvio:hover{
+    background: rgb(4, 190, 236);
+    cursor: pointer;
+    font-style: italic;
+
+
+}
+
+.separador{
+
+
+    margin-top: 20px;
+    margin: auto;
+    padding: 20px;
+    text-align: right;
+    border-top: 1px solid white;
+}
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+

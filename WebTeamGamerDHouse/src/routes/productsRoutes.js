@@ -31,11 +31,13 @@ const upload = multer({ storage });
 
 router.get('/productos', productsRouter.allProducts);
 
-router.get('/productos/create',productsRouter.createProducts);
+
+router.get('/productos/create',productsRouter.createProductos);
+
+router.post('/productos/create',productsRouter.createProducts);
 
 router.get('/products/:id', productsRouter.productsId);
 
-router.post('/productos' );
 
 router.get('/productos/:id/edit' );
 
