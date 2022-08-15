@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: aliceblue;
-    background: black;
+    color: rgb(15, 15, 15);
+    background: rgb(206, 205, 209);
+
 }
     
 .registro h2{
@@ -18,14 +19,18 @@
 }
 .formularioRegistro{
 
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-template-rows: 2fr ;
+    
     width: 70%;
     
     padding: 30px;
     margin: auto;
     margin-top: 50px;
     border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
+    font-family: 'san serif';
+    color: rgb(17, 17, 17);
     
 }
 .formularioRegistro .etiqueta{
@@ -122,6 +127,17 @@
     border-top: 1px solid white;
 }
 
+.texto-error{
+
+    color: rgb(138, 6, 6);
+    margin-left: 0;
+    padding-left: 4;
+}
+
+.etiqueta .input i{
+
+    color:red
+}
 
 
 
