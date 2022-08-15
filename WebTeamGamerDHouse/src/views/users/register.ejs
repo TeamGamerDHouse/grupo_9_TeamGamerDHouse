@@ -4,31 +4,59 @@
 <body>
     <%- include('../partials/header.ejs') %>
 
+        
     <main class="registro">
+
         <h2>Formulario de Registro de Usuario</h2>
 
-        <form  class="formularioRegistro" action="/user/login" method="post">
+        <form  class="formularioRegistro" action='/register' method="POST" enctype="multipart/form-data">
             <div class="etiqueta">
-                <label>Ingrese su nombre completo:</label>
-                    <input class="input" type="text" name="nombreCompleto" placeholder="Ingrese su nombre">
+                <label>Ingrese su Nombre:</label>
+                    <input      
+                    class="input" type="text" name="nombre">
+
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="texto-error">
+                            <%= errors.nombre.msg %> 
+                        </div>
+                 
+                    <% } %>
+            </div>
+            <div class="etiqueta">
+                <label>Ingrese su Apellido</label>
+                    <input class="input" type="text" name="apellido" >
+                    <% if (locals.errors && errors.apellido) { %>
+                        <div class="texto-error">
+                            <%= errors.apellido.msg %> 
+                        </div>
+                     
+                    <% } %>
             </div>
             <div class="etiqueta">
                 <label >Ingese su Email</label>
-                    <input class="input" type="email" name="mailusuario" placeholder="Ingrese su Email">
+                    <input class="input" type="email" name="mailusuario" >
+                        <% if (locals.errors && errors.mailusuario) { %>
+                            <div class="texto-error">
+                                <%= errors.mailusuario.msg %> 
+                            </div>
+                     
+                        <% } %>
             </div>
             <div class="etiqueta">
                 <label>Ingrese su Contraseña:</label>
-                    <input class="input" type="password" name="password"placeholder="Ingrese su contraseña">
+                    <input class="input" type="password" name="password">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="texto-error">
+                            <%= errors.password.msg %> 
+                        </div>
+                     
+                    <% } %>
             </div>
-            <div class="etiqueta">
-                <label>Repita Contraseña:</label>
-                    <input  class="input" type="password" name="password2"placeholder="Repita su contraseña">
-            </div>
-            
+                        
             <div class="etiqueta">
                 <label>Ingrese su localidad:</label>
-                    <select  class="input" name="Provincia">
-                        <option value="provincia">Provincia</option>
+                    <select  class="input" name="provincia">
+                        <option value="">Provincia</option>
                             <option value="buenosAires">Buenos Aires</option>
                             <option value="caba">Ciudad Autonoma de Buenos Aires</option>
                             <option value="catamarca">Catamarca</option>
@@ -52,23 +80,38 @@
                             <option value="santaFe">Santa Fe</option>
                             <option value="santiagoDelEstero">Santiago Del Estero</option>
                             <option value="tierraDelFuego">Tierra Del Fuego</option>
+
+                            <% if (locals.errors && errors.provincia) { %>
+                                <div class="texto-error">
+                                    <%= errors.provincia.msg %> 
+                                </div>
+                             
+                            <% } %>
                     </select>
                    
                 </div>
 
                 <div class="etiqueta">
                     <label>Ingrese su Foto de Perfil:</label>
-                        <input  class="input" type="file" name="fotoUsuario" placeholder="Ingrese su Foto">
+                        <input  class="input" type="file" name="avatar" accept="image/*" >
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="texto-error">
+                                <%= errors.avatar.msg %> 
+                            </div>
+                         
+                        <% } %>
+
                 </div> 
-                
-            </div>
-            <div>
-                <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-            </div>
+                <br>
+                </div>
+                <div class="registro">
+                 <div class="etiqueta">
             
                 <input  class="botonEnvio" type="submit" value="Registrarme">
             
-            <p><a href="#">Usuario ya registrado?</a></p>
+                    <p><a href="login">Usuario ya registrado?</a></p>
+              </div> 
+            </div>
 
 
 

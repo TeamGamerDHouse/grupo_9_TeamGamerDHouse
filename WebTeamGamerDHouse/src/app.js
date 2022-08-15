@@ -10,7 +10,6 @@ const publicPath = path.join(__dirname, '../public');
 
 // REQUIERE USO DE RUTAS
 const mainRoutes = require('./routes/mainRoutes');
-const carritoRoutes = require('./routes/carritoRoutes');
 const productsRouter = require('./routes/productsRoutes');
 
 
@@ -29,14 +28,13 @@ app.set('view engine', 'ejs');
 app.use(express.static(publicPath));
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
 
 //APP USO DE LAS RUTAS
 
 app.use(mainRoutes);
-app.use(carritoRoutes);
 app.use(productsRouter);
 
 

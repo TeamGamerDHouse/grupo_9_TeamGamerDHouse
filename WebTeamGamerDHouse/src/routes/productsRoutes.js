@@ -1,10 +1,16 @@
 const express = require('express');
-const productsRouter = require('../controllers/productosController');
+const router = express.Router();
+const {body}= require('express-validator')
 const multer = require('multer');
 const path = require('path');
+const productsRouter = require('../controllers/productosController');
 
 
-const router = express.Router();
+// validaciones
+
+const validateProducto = [
+    
+]
 
 
 // multer
@@ -33,6 +39,8 @@ router.get('/productos', productsRouter.allProducts);
 
 
 router.get('/productos/create',productsRouter.createProductos);
+
+// mejorar controllers
 
 router.post('/productos/create',productsRouter.createProducts);
 
