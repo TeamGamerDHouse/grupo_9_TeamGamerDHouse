@@ -1,7 +1,7 @@
 
 module.exports = (sequelize,dataTypes)=>{
 
-    const alias = "Plataforma";
+    const alias = "Plataformas";
 
     const cols={
 
@@ -12,7 +12,7 @@ module.exports = (sequelize,dataTypes)=>{
             
         },
         nombre:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         }
        
 
@@ -27,6 +27,15 @@ module.exports = (sequelize,dataTypes)=>{
 
 
     const Plataforma = sequelize.define(alias, cols, config);
+
+    Plataforma.associate = (models)=>{
+
+        Plataforma.hasMany(models.Plataformas,{
+            foreignKey:"id_plataforma",
+            as:"Plataforma"
+    
+            });
+    }
 
     return Plataforma;
         

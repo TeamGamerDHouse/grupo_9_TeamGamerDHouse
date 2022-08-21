@@ -1,7 +1,7 @@
 
 module.exports = (sequelize,dataTypes)=>{
 
-    const alias = "Genero";
+    const alias = "Generos";
 
     const cols={
 
@@ -12,7 +12,7 @@ module.exports = (sequelize,dataTypes)=>{
             
         },
         nombre:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         }
        
 
@@ -30,13 +30,14 @@ module.exports = (sequelize,dataTypes)=>{
 
     Genero.associate =(models)=>{
 
-        Genero.hasMany(models.Producto,{
-        foreignKey:"id_genero",
-        as:"Genero"
+    Genero.hasMany(models.Productos,{
+        as: "productos",
+        foreignKey:"id_genero"
 
     });
 
-}   
+    
+}
 
     return Genero;
         

@@ -12,20 +12,20 @@ module.exports = (sequelize,dataTypes)=>{
             
         },
         nombre:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         },
         
         apellido:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         },
         email:{
-            type:dataTypes.DECIMAL
+            type:dataTypes.STRING
         },
         password:{
-            type:dataTypes.LONGBLOB
+            type:dataTypes.STRING
         },
         imagenusuario:{
-            type:dataTypes.LONGBLOB
+            type:dataTypes.BLOB
 
         },
         id_direccion:{
@@ -46,12 +46,12 @@ module.exports = (sequelize,dataTypes)=>{
 
     Usuario.associate =(models)=>{
 
-        Usuario.belongsTo(models.Direcion,{
-        foreignKey:"id_direccion",
-        as:"Usuario"
+        Usuario.belongsTo(models.Direccion,{
+            as:"usuario",
+            foreignKey:"id_direccion"
 
         });
-        Usuario.belongsToMany(models.Producto,{
+        Usuario.belongsToMany(models.Productos,{
 
             as:"usuarios",
             through: "usuario_x_producto",

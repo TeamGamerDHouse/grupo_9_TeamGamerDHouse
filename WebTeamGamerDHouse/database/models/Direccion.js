@@ -1,7 +1,7 @@
 
 module.exports = (sequelize,dataTypes)=>{
 
-    const alias = "Direcion";
+    const alias = "Direccion";
 
     const cols={
 
@@ -12,16 +12,16 @@ module.exports = (sequelize,dataTypes)=>{
             
         },
         pais:{
-            type:dataTypes.VARCHAR
+            type: dataTypes.STRING
         },
         ciudad:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         },
         calle:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         },
         numero:{
-            type:dataTypes.VARCHAR
+            type:dataTypes.STRING
         }
 
 
@@ -52,7 +52,7 @@ module.exports = (sequelize,dataTypes)=>{
 
 
 
-    return direccion;
+    return Direccion;
         
 
 }
