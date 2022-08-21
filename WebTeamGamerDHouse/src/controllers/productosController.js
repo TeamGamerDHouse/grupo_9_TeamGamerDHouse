@@ -1,11 +1,28 @@
-const path = require('path')
+const path = require('path');
 
-
+const db = require('../../database/models');
 
 
 
 //controlador
-const controller = {
+const productosController = {
+    crear: (req,res)=>{
+
+        db.Producto.findAll()
+            .then((productos)=>{
+                return res.render('formProductos', { productos })
+            });
+            
+
+
+
+
+
+
+    }
+    
+    
+
 
     
 
@@ -23,4 +40,4 @@ const controller = {
 
 
 
-module.exports = controller;
+module.exports = productosController;

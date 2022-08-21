@@ -3,7 +3,7 @@ const router = express.Router();
 const {body}= require('express-validator')
 const multer = require('multer');
 const path = require('path');
-const productsRouter = require('../controllers/productosController');
+const productosController = require('../controllers/productosController');
 
 
 // validaciones
@@ -35,23 +35,23 @@ const upload = multer({ storage });
 //rutas
 
 
-router.get('/productos', productsRouter.allProducts);
+//router.get('/productos', productsRouter.allProducts);
 
 
-router.get('/productos/create',productsRouter.createProductos);
+router.get('/productos/create',productosController.crear);
 
 // mejorar controllers
 
-router.post('/productos/create',productsRouter.createProducts);
+//router.post('/productos/create',productsRouter.createProducts);
 
-router.get('/products/:id', productsRouter.productsId);
+//router.get('/products/:id', productsRouter.productsId);
 
 
-router.get('/productos/:id/edit' );
+//router.get('/productos/:id/edit' );
 
-router.put('/productos/:id' );
+//router.put('/productos/:id' );
 
-router.delete('/productos/:id' )
+//router.delete('/productos/:id' )
 
 
 
