@@ -36,8 +36,11 @@ app.use(express.json());
 
 //APP USO DE LAS RUTAS
 
+
 app.use(mainRoutes);
 app.use(productsRouter);
+
+
 
 
 
