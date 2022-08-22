@@ -21,7 +21,7 @@ module.exports = (sequelize,dataTypes)=>{
         email:{
             type:dataTypes.STRING
         },
-        password:{
+        contraseña:{
             type:dataTypes.STRING
         },
         imagenusuario:{
