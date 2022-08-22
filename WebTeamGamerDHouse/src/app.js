@@ -14,6 +14,8 @@ const productsRouter = require('./routes/productsRoutes');
 
 
 
+
+
 // USO DE EXPRESS
 const app = express();
 
@@ -36,6 +38,9 @@ app.use(express.json());
 
 app.use(mainRoutes);
 app.use(productsRouter);
+
+
+
 
 
 // LEVANTO SERVIDOR'

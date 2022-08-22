@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+
+        <div class="listado">
+            <h2>Listado de Generos:
+                <ul>
+                    <% for( let i = 0; i < plataformas.length; i++ ) { %>
+                        
+                        <li>
+                            <a href="#" > plataforma: <%=plataformas[i].nombre%> </a>
+                        </li>
+                    <% } %>
+
+                    
+                </ul>
+            </h2>
+
+            
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %> 
+</body>
+</html>

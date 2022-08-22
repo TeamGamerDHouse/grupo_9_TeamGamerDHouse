@@ -32,7 +32,22 @@ const upload = multer({ storage });
 
 
 
-//rutas
+// rutas de paginas referente a generos
+router.get('/productos/generos/crear',productosController.crearGenero);
+
+router.post('/productos/generos/crear',productosController.generoCreado);
+
+
+router.get('/productos/generos', productosController.listadoGeneros);
+
+// rutas de paginas de referentes a plataformas
+
+router.get('/productos/plataforma/crear', productosController.crearPLataforma);
+
+router.post('/productos/plataforma/crear', productosController.plataformaCreado);
+
+router.get('/productos/plataforma', productosController.plataformasListado);
+
 
 
 //router.get('/productos', productsRouter.allProducts);
