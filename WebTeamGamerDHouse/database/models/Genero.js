@@ -1,7 +1,7 @@
 
 module.exports = (sequelize,dataTypes)=>{
 
-    const alias = "Generos";
+    const alias = "Genero";
 
     const cols={
 

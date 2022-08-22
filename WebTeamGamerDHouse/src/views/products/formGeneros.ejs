@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    <%- include('../partials/header.ejs') %>
+<main>
+
+    <div class="formularioRegistro">
+
+        <form action="/productos/generos/crear" method="post">
+            <label >Ingreso de Generos</label>
+            <input class="etiqueta" type="text" name="genero" >
+
+
+            <br>
+
+            <button type="submit">Agregar generos</button>
+            
+
+            
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+</main>    
+
+
+    <%- include('../partials/footer.ejs') %> 
+</body>
+</html>

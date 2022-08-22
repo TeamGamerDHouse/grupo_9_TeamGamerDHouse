@@ -30,9 +30,9 @@ module.exports = (sequelize,dataTypes)=>{
 
     Plataforma.associate = (models)=>{
 
-        Plataforma.hasMany(models.Plataformas,{
-            foreignKey:"id_plataforma",
-            as:"Plataforma"
+        Plataforma.hasMany(models.Productos,{
+            as:"plataformas",
+            foreignKey:"id_plataforma"
     
             });
     }
