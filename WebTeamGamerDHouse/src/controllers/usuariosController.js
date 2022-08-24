@@ -2,10 +2,12 @@ const path =require('path')
 
 const { validationResult }= require('express-validator')
 
+const db= require('../../database/models/index')
 
 
 
-const controller = {
+
+const usuarioController = {
     index: (req,res) => {
          res.render(path.join(__dirname,'../views/users/index.ejs'));
     },
@@ -26,6 +28,10 @@ const controller = {
             })
 
         }else{
+            db.Usuario.create({
+
+                
+            })
 
          return res.redirect('login');
         }
@@ -46,4 +52,4 @@ const controller = {
 }
 
 
-module.exports = controller;
+module.exports = usuarioController;

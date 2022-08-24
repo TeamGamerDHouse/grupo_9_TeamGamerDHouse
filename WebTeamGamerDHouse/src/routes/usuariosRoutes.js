@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require ('path')
 
-const mainController = require('../controllers/mainController');
+const usuarioController = require('../controllers/usuariosController');
 
 
 //requiere express validator
@@ -46,22 +46,19 @@ const validations =[
     
 ];
 
-// ruta home
-router.get('/', mainController.index);
-
 // RUTA LOGIN
-router.get('/login', mainController.login);
+router.get('/login', usuarioController.login);
 
 
 
 //ruta registro de usuario
-router.get('/register', mainController.register);
+router.get('/register', usuarioController.register);
 
 
 //ruta post del registro de usuario
 
 
-router.post('/register',uploadFile.single('avatar'), validations, mainController.processRegister);
+router.post('/register',uploadFile.single('avatar'), validations, usuarioController.processRegister);
 
 
 
