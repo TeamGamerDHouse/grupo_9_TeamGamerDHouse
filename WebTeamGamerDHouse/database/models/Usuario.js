@@ -25,7 +25,7 @@ module.exports = (sequelize,dataTypes)=>{
             type:dataTypes.STRING
         },
         imagenusuario:{
-            type:dataTypes.BLOB
+            type:dataTypes.STRING
 
         },
         pais:{

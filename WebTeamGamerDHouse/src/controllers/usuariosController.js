@@ -17,32 +17,29 @@ const usuarioController = {
     },
     usuarioRegistrado:( req, res)=>{
 
-        const resultValidation = validationResult(req);
+       /* const resultValidation = validationResult(req);
 
-        /*if (resultValidation.errors.length > 0) {
+        if (resultValidation.errors.length > 0) {
             return res.render(path.join(__dirname, '../views/users/register.ejs'),{
 
                 errors : resultValidation.mapped(),
+                
 
                 
             })
 
-        }else{*/
-
+        }else{
+*/
 
             db.Usuario.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.mailusuario,
                 contraseña: req.body.password,
-                imagenusuario: req.body.avatar,
-                id_direccion: db.Direccion
-
-                
-            });
-            db.Direccion.create({
-               pais: req.body.pais,
-               ciudad: req.body.ciudad,
+                imagenusuario: req.file ? req.file.filename : productImage
+                ,
+                pais: req.body.pais,
+                ciudad: req.body.ciudad,
                 calle: req.body.calle,
                 numero: req.body.numero
             });
@@ -52,7 +49,6 @@ const usuarioController = {
 
        
     },
-
     
 
       
