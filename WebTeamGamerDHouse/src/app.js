@@ -9,7 +9,7 @@ const path =require("path");
 const publicPath = path.join(__dirname, '../public');
 
 // REQUIERE USO DE RUTAS
-const mainRoutes = require('./routes/usuariosRoutes');
+const usuariosRoutes = require('./routes/usuariosRoutes');
 const productsRouter = require('./routes/productsRoutes');
 const generosRoutes =require('./routes/generosRoutes');
 const plataformaRutes =require('./routes/plataformaRoutes');
@@ -41,7 +41,7 @@ app.use(express.json());
 
 
 app.use(indexRoutes);
-app.use(mainRoutes);
+app.use(usuariosRoutes);
 app.use(productsRouter);
 app.use(generosRoutes);
 app.use(plataformaRutes);

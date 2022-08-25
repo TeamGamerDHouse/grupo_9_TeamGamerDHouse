@@ -9,11 +9,10 @@
 
         <h2>Formulario de Registro de Usuario</h2>
 
-        <form  class="formularioRegistro" action='/register' method="POST" enctype="multipart/form-data">
+        <form  class="formularioRegistro" action='/register' method="post" enctype="multipart/form-data">
             <div class="etiqueta">
                 <label>Ingrese su Nombre:</label>
-                    <input      
-                    class="input" type="text" name="nombre">
+                    <input class="input" type="text" name="nombre">
 
                     <% if (locals.errors && errors.nombre) { %>
                         <div class="texto-error">
@@ -54,42 +53,25 @@
             </div>
                         
             <div class="etiqueta">
-                <label>Ingrese su localidad:</label>
-                    <select  class="input" name="provincia">
-                        <option value="">Provincia</option>
-                            <option value="buenosAires">Buenos Aires</option>
-                            <option value="caba">Ciudad Autonoma de Buenos Aires</option>
-                            <option value="catamarca">Catamarca</option>
-                            <option value="chaco">Chaco</option>
-                            <option value="chubut">Chubut</option>
-                            <option value="cordoba">Córdoba</option>
-                            <option value="corrientes">Corrientes</option>
-                            <option value="entreRios">Entre Ríos</option>
-                            <option value="formosa">Formosa</option>
-                            <option value="jujuy">jujuy</option>
-                            <option value="laPampa">La Pampa</option>
-                            <option value="laRioja">La Rioja</option>
-                            <option value="mendoza">Mendoza</option>
-                            <option value="misiones">Misiones</option>
-                            <option value="neuquen">Neuquen</option>
-                            <option value="rioNegro">Río Negro</option>
-                            <option value="salta">Salta</option>
-                            <option value="sanJuan">San Juan</option>
-                            <option value="sanLuis">San Luis</option>
-                            <option value="santaCruz">Santa Cruz</option>
-                            <option value="santaFe">Santa Fe</option>
-                            <option value="santiagoDelEstero">Santiago Del Estero</option>
-                            <option value="tierraDelFuego">Tierra Del Fuego</option>
-
-                            <% if (locals.errors && errors.provincia) { %>
-                                <div class="texto-error">
-                                    <%= errors.provincia.msg %> 
-                                </div>
-                             
-                            <% } %>
-                    </select>
-                   
+                <label>Ingrese su Pais:</label>
+                    <input type="text" class="input" name="pais">
+                        
                 </div>
+                <div class="etiqueta">
+                    <label>Ingrese su Ciudad </label>
+                        <input type="text" class="input" name="ciudad">
+                            
+                    </div>
+                <div class="etiqueta">
+                        <label>Ingrese su Calle:</label>
+                            <input type="text" class="input" name="calle">
+                                
+                        </div>    
+                 <div class="etiqueta">
+                        <label>Ingrese su numero :</label>
+                            <input type="number" class="input" name="numero">
+                                    
+                            </div>
 
                 <div class="etiqueta">
                     <label>Ingrese su Foto de Perfil:</label>

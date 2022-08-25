@@ -25,13 +25,21 @@ module.exports = (sequelize,dataTypes)=>{
             type:dataTypes.STRING
         },
         imagenusuario:{
-            type:dataTypes.BLOB
+            type:dataTypes.STRING
 
         },
-        id_direccion:{
-            type:dataTypes.INTEGER
+        pais:{
+            type: dataTypes.STRING
+        },
+        ciudad:{
+            type:dataTypes.STRING
+        },
+        calle:{
+            type:dataTypes.STRING
+        },
+        numero:{
+            type:dataTypes.STRING
         }
-
 
     };
 
@@ -46,11 +54,7 @@ module.exports = (sequelize,dataTypes)=>{
 
     Usuario.associate =(models)=>{
 
-        Usuario.belongsTo(models.Direccion,{
-            as:"usuario",
-            foreignKey:"id_direccion"
-
-        });
+       
         Usuario.belongsToMany(models.Productos,{
 
             as:"usuarios",

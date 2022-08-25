@@ -58,7 +58,7 @@ router.get('/register', usuarioController.register);
 //ruta post del registro de usuario
 
 
-router.post('/register',uploadFile.single('avatar'), validations, usuarioController.processRegister);
+router.post('/register',uploadFile.single('avatar'), validations, usuarioController.usuarioRegistrado);
 
 
 
