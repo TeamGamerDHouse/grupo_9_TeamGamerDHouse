@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage });
+const uploadFile = multer({ storage });
 
 
 
@@ -36,16 +36,15 @@ const upload = multer({ storage });
 
 
 
-//router.get('/productos', productsRouter.allProducts);
+router.get('/productos', productosController.allProducts);
 
 
 router.get('/productos/create',productosController.crear);
 
-// mejorar controllers
 
-router.post('/productos/create',productosController.createProducts);
+router.post('/productos/create',uploadFile.single('product'), productosController.createProducts);
 
-//router.get('/products/:id', productsRouter.productsId);
+router.get('/products/:id', productosController.productsId);
 
 
 //router.get('/productos/:id/edit' );

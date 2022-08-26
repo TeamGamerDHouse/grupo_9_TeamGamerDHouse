@@ -1,0 +1,40 @@
+l lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+   <%- include('../partials/header.ejs') %>
+
+   <main>
+
+    <h2>Lista de usuarios</h2>
+
+    <ul>
+        <% for( let i = 0; i < usuarios.length; i++ ) { %>
+        
+            <li>
+                <h3>Nombre: <%= usuarios[i].nombre%> </h3>
+                <h4>Apellido <%=usuarios[i].apellido%> </h4>
+                <br>
+
+               
+                
+            </li>
+        <% } %>
+    </ul>
+
+
+
+
+
+   </main>
+
+
+
+
+
+
+   <%- include('../partials/footer.ejs') %>
+
+    
+    
+</body>
+</html>
