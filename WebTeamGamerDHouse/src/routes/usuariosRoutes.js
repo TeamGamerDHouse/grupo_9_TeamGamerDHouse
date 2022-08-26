@@ -64,7 +64,7 @@ router.post('/register',uploadFile.single('avatar'), validations, usuarioControl
 
 
 //ruta de busqueda de usuario por ID
-
+router.get('/usuarios', usuarioController.listadeUsuarios);
 //router.get('/usuarios/:id', mainController.getUserId);
 
 

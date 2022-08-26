@@ -54,8 +54,15 @@ const usuarioController = {
       
     login: (req,res) => {
         res.render(path.join(__dirname, '../views/users/login.ejs'));
+    },
+
+    listadeUsuarios :(req,res)=>{
+
+        db.Usuario.findAll()
+            .then(usuarios =>{
+                return res.render(path.join(__dirname,'../views/users/listadeusuarios.ejs'),{usuarios});
+            })
     }
-    
 }
 
 
