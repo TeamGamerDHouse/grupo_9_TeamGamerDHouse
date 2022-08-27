@@ -13,10 +13,11 @@
                         <select  class="input" name="generos">
 
                             <% for( let i = 0; i < productos.length; i++ ) { %>
+                                
 
-                                <option value="<%= productos[i].genero.id %> ">
+                                <option value="<%= productos[i].generos.id %> ">
 
-                                    <%= productos[i].genero.nombre%> 
+                                    <%= productos[i].generos.nombre%> 
                                                                 
                                 </option>
                             
@@ -31,9 +32,9 @@
                             <select  class="input" name="plataformas">
                                 
                                 <% for( let i = 0; i < productos.length; i++ ) { %>
-                                    <option value="<%=productos[i].plataforma.id%> ">
+                                    <option value="<%=productos[i].plataformas.id%> ">
                                         
-                                        <%= productos[i].plataforma.nombre%> 
+                                        <%= productos[i].plataformas.nombre%> 
     
                                                                     
                                     </option>
@@ -59,7 +60,7 @@
                     
             <div class="etiqueta">
                     <label>Ingresar Foto del Articulo</label>
-                        <input  class="input" type="file" name="imagen" accept=".jpj .png" multiple >
+                        <input  class="input" type="file" name="imagen" accept="image/*" multiple >
             </div> 
                 
             </div>
