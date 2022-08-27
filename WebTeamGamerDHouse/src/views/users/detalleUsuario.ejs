@@ -8,17 +8,66 @@
             <section class="usuario">
                 <div>
 
-                    <h2>Usuario Solicitado: </h2>
+                    <h2>Usuario Solictado:  ID N° <%= usuario.id%>  </h2>
+
                 </div>    
-                <% if(user) {%> 
-                    <div><h3>Nombre de Usuario: <%= user.nombreCompleto%></h3>
-                    <br>
-                    <h3>Mail: <%= user.email%></h3>
-                    <br>
-                    <h3>Localidad: <%= user.localidad%> </h3>
+                    <div>
+                        <ul>
+
+                            <li>
+                                <h3>Nombre: <%= usuario.nombre%></h3>
+
+                            </li>
+
+                            <li>
+                                <h3>Apellido: <%= usuario.apellido%></h3>
+
+                            </li>
+                            
+                            <li>
+                                <h3>Email: <%= usuario.email%> </h3>
+
+                            </li>
+                            <li>
+
+                                <h3>pais: <%= usuario.pais%> </h3>
+                            </li>
+                            <li>
+
+                                <h3>Ciudad: <%= usuario.ciudad%> </h3>
+                            </li>
+                            <li>
+
+                                <h3>Calle: <%= usuario.calle %> </h3>
+                            </li>
+                            <li>
+
+                                <h3>Numero: <%= usuario.numero %> </h3>
+                            </li>
+                        </ul>
+
+
+
                 </div>
-                <% } %> 
+                <br>
+                
             </section>
+            <section>
+
+                <a href="/usuario/editar/<%= usuario.id %> ">
+                    <button  class="botonEnvio" type="submit">EDITAR USUARIO</button>
+                </a>
+            </section>
+            <section>
+                <form action="/usuario/eliminar/<%= usuario.id %>?_method=DELETE" method="post">
+
+                    <button  class="botonEnvio" type="submit">Eliminar Usuario</button>
+
+                </form>
+                
+            </section>
+
+
         </main>    
     <%- include('../partials/footer.ejs') %>
 </body>

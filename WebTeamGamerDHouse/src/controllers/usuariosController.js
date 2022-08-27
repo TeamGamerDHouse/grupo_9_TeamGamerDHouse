@@ -60,8 +60,59 @@ const usuarioController = {
 
         db.Usuario.findAll()
             .then(usuarios =>{
-                return res.render(path.join(__dirname,'../views/users/listadeusuarios.ejs'),{usuarios});
+                return res.render(path.join(__dirname,'../views/users/listadeusuarios.ejs'),{usuarios:usuarios});
             })
+    },
+    detalleUsuario: (req,res)=>{
+        db.Usuario.findByPk(req.params.id)
+            .then(usuario =>{
+                res.render(path.join(__dirname,'../views/users/detalleUsuario.ejs'),{usuario:usuario})
+            });
+
+
+    },
+    editar:(req,res)=>{
+
+        db.Usuario.findByPk(req.params.id)
+            .then(usuario =>{
+                res.render(path.join(__dirname, '../views/users/usuarioEdit.ejs'),{usuario:usuario})
+            });
+
+
+    },
+    editado:(req,res)=>{
+
+        db.Usuario.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.mailusuario,
+            contraseña: req.body.password,
+            imagenusuario: req.file ? req.file.filename : productImage
+            ,
+            pais: req.body.pais,
+            ciudad: req.body.ciudad,
+            calle: req.body.calle,
+            numero: req.body.numero
+        },
+        {
+            where:{
+                id: req.params.id
+            }
+        });
+
+        res.redirect('/usuario/'+ req.params.id);
+
+    },
+
+    eliminar:(req,res)=>{
+
+        db.Usuario.destroy({
+            where:{
+                id:req.params.id
+            }
+        });
+
+        res.redirect('/usuarios')
     }
 }
 

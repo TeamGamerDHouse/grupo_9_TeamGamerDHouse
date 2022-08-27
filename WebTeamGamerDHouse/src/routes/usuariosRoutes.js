@@ -55,8 +55,8 @@ router.get('/login', usuarioController.login);
 router.get('/register', usuarioController.register);
 
 
-//ruta post del registro de usuario
 
+//ruta post del registro de usuario
 
 router.post('/register',uploadFile.single('avatar'), validations, usuarioController.usuarioRegistrado);
 
@@ -65,7 +65,20 @@ router.post('/register',uploadFile.single('avatar'), validations, usuarioControl
 
 //ruta de busqueda de usuario por ID
 router.get('/usuarios', usuarioController.listadeUsuarios);
-//router.get('/usuarios/:id', mainController.getUserId);
+
+router.get('/usuario/:id',usuarioController.detalleUsuario);
+
+//editar
+
+router.get('/usuario/editar/:id', usuarioController.editar);
+
+router.put('/usuario/editar/:id',uploadFile.single('avatar'), usuarioController.editado);
+
+
+//DELETE
+
+router.delete('/usuario/eliminar/:id', usuarioController.eliminar)
+
 
 
 
