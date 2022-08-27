@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+
+        
+    <main class="registro">
+
+        <h2>Editar Usuario : <%= usuario.nombre %> </h2>
+
+        <form  class="formularioRegistro" action='/usuario/editar/<%= usuario.id %>?_method=PUT' method="post" enctype="multipart/form-data">
+            <div class="etiqueta">
+                <label>Ingrese su Nombre:</label>
+                    <input class="input" type="text" name="nombre" value="<%= usuario.nombre %> ">
+
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="texto-error">
+                            <%= errors.nombre.msg %> 
+                        </div>
+                 
+                    <% } %>
+            </div>
+            <div class="etiqueta">
+                <label>Ingrese su Apellido</label>
+                    <input class="input" type="text" name="apellido"value="<%= usuario.apellido %>" >
+                    <% if (locals.errors && errors.apellido) { %>
+                        <div class="texto-error">
+                            <%= errors.apellido.msg %> 
+                        </div>
+                     
+                    <% } %>
+            </div>
+            <div class="etiqueta">
+                <label >Ingese su Email</label>
+                    <input class="input" type="email" name="mailusuario" value="<%= usuario.email %>" >
+                        <% if (locals.errors && errors.mailusuario) { %>
+                            <div class="texto-error">
+                                <%= errors.mailusuario.msg %> 
+                            </div>
+                     
+                        <% } %>
+            </div>
+            <div class="etiqueta">
+                <label>Ingrese su Contraseña:</label>
+                    <input class="input" type="password" name="password" value="<%= usuario.contraseña %>">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="texto-error">
+                            <%= errors.password.msg %> 
+                        </div>
+                     
+                    <% } %>
+            </div>
+                        
+            <div class="etiqueta">
+                <label>Ingrese su Pais:</label>
+                    <input type="text" class="input" name="pais" value="<%= usuario.pais %>">
+                        
+                </div>
+                <div class="etiqueta">
+                    <label>Ingrese su Ciudad </label>
+                        <input type="text" class="input" name="ciudad" value="<%= usuario.ciudad %>">
+                            
+                    </div>
+                <div class="etiqueta">
+                        <label>Ingrese su Calle:</label>
+                            <input type="text" class="input" name="calle" value="<%= usuario.calle %>">
+                                
+                        </div>    
+                 <div class="etiqueta">
+                        <label>Ingrese su numero :</label>
+                            <input type="number" class="input" name="numero" value="<%= usuario.numero %>">
+                                    
+                            </div>
+
+                <div class="etiqueta">
+                    <label>Ingrese su Foto de Perfil:</label>
+                        <input  class="input" type="file" name="avatar" accept="image/*" >
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="texto-error">
+                                <%= errors.avatar.msg %> 
+                            </div>
+                         
+                        <% } %>
+
+                </div> 
+                <br>
+                </div>
+                <div class="registro">
+                 <div class="etiqueta">
+            
+                <input  class="botonEnvio" type="submit" value="GUARDAR USUARIO">
+            
+                    
+              </div> 
+            </div>
+
+
+
+        </form>
+
+    
+
+    </main>
+   
+    <%- include('../partials/footer.ejs')%>
+
+  
+</body>
+</html>

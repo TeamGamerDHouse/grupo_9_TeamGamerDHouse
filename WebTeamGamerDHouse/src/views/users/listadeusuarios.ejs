@@ -1,4 +1,5 @@
-l lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <%- include('../partials/head.ejs') %>
 <body>
    <%- include('../partials/header.ejs') %>
@@ -7,19 +8,16 @@ l lang="en">
 
     <h2>Lista de usuarios</h2>
 
-    <ul>
+    <ol>
         <% for( let i = 0; i < usuarios.length; i++ ) { %>
         
             <li>
-                <h3>Nombre: <%= usuarios[i].nombre%> </h3>
-                <h4>Apellido <%=usuarios[i].apellido%> </h4>
-                <br>
-
-               
+                <a href="/usuario/<%=usuarios[i].id%> "><h3>Nombre: <%= usuarios[i].nombre%> <%=usuarios[i].apellido%> </h3></a>
+                              
                 
             </li>
         <% } %>
-    </ul>
+    </ol>
 
 
 
