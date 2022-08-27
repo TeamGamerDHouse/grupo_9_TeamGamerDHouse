@@ -21,11 +21,11 @@ const storage = multer.diskStorage({
     },
 
     filename: (req, file, cb)=>{
-        const newFile = 'produc-'+ Date.now() + path.extname(file.originalname);
-        cb(null, newFile); 
+        const newFileName = 'producto'+ Date.now() + path.extname(file.originalname);
+        cb(null, newFileName); 
          
     }
-})
+});
 
 const uploadFile = multer({ storage });
 
@@ -42,7 +42,7 @@ router.get('/productos', productosController.allProducts);
 router.get('/productos/create',productosController.crear);
 
 
-router.post('/productos/create',uploadFile.single('product'), productosController.createProducts);
+router.post('/productos/create',uploadFile.single('producto'), productosController.createProducts);
 
 router.get('/products/:id', productosController.productsId);
 

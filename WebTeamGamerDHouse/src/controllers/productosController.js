@@ -13,11 +13,11 @@ const productosController = {
 
     allProducts:(req,res)=>{
         
-        db.Producto.findAll()
+        db.Productos.findAll()
             .then(productos=>{
                 
-                return res.render(path.join(__dirname, '../views/products/productos.ejs'),{ productos })
-            })
+                return res.render(path.join(__dirname, '../views/products/productos.ejs'),{ productos:productos })
+            });
 
     },
 
@@ -29,11 +29,16 @@ const productosController = {
             include:[
                 {
                     association: 'generos'
+                },
+                {
+                    association:"plataformas"
                 }
                
             ]
         })
             .then (productos =>{
+
+                
 
                 res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{productos:productos})
             });
@@ -51,6 +56,8 @@ const productosController = {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
+            imagen: req.file ? req.file.filename : productImage
+
             })
                 .then(productos =>{
                     res.render('productos')
