@@ -29,21 +29,16 @@ const uploadFile = multer({ storage });
 // aplicar validaciones
 
 const validations =[
-    body('nombre').notEmpty().withMessage('Completar el campo de Nombre'),
-    body('apellido').notEmpty().withMessage('Completar el campo de Apellido'),
-    body('mailusuario').notEmpty().withMessage('Completar el campo de Email').bail()
+    body('nombre').notEmpty().withMessage('Debe Completar el campo de Nombre'),
+    body('apellido').notEmpty().withMessage('Debe Completar el campo de Apellido'),
+    body('mailusuario').notEmpty().withMessage('Debe Completar el campo de Email').bail()
         .isEmail().withMessage('Debe ser un email valido'),
-    body('password').notEmpty().withMessage('Completar el campo password'),
-    body('provincia').notEmpty().withMessage('seleccionar Provincia'),
-    body('avatar').custom((value,{req})=>{
-        let file = req.file;
-        if (!file) {
-            throw new Error ('tienes que subir una imagen')
-        }
-        return true;
-    })
-
-    
+    body('password').notEmpty().withMessage('Debe Completar el campo password'),
+    body('pais').notEmpty().withMessage('Debe completar el campo Pais'),
+    body('ciudad').notEmpty().withMessage('Debe completar el campo Ciudad'),
+    body('calle').notEmpty().withMessage('Debe completar el campo Calle'),
+    body('numero').notEmpty().withMessage('Debe completar el campo número'),
+       
 ];
 
 // RUTA LOGIN
