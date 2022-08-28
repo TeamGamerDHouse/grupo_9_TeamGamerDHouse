@@ -17,19 +17,9 @@ const usuarioController = {
     },
     usuarioRegistrado:( req, res)=>{
 
-       /* const resultValidation = validationResult(req);
-
-        if (resultValidation.errors.length > 0) {
-            return res.render(path.join(__dirname, '../views/users/register.ejs'),{
-
-                errors : resultValidation.mapped(),
-                
-
-                
-            })
-
-        }else{
-*/
+        const errores = validationResult(req);
+        
+        if(errores.isEmpty()){
 
             db.Usuario.create({
                 nombre: req.body.nombre,
@@ -43,9 +33,19 @@ const usuarioController = {
                 calle: req.body.calle,
                 numero: req.body.numero
             });
-
+    
          return res.redirect('login');
-       // }
+            
+        }else{
+
+            res.render(path.join(__dirname, '../views/users/register.ejs'),{
+                errors:errores.mapped(),
+                old:req.body    
+            });
+
+        
+
+       }
 
        
     },

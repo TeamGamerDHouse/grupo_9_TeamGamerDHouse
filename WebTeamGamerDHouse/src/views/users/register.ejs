@@ -9,91 +9,144 @@
 
         <h2>Formulario de Registro de Usuario</h2>
 
-        <form  class="formularioRegistro" action='/register' method="post" enctype="multipart/form-data">
-            <div class="etiqueta">
-                <label>Ingrese su Nombre:</label>
-                    <input class="input" type="text" name="nombre">
 
-                    <% if (locals.errors && errors.nombre) { %>
-                        <div class="texto-error">
-                            <%= errors.nombre.msg %> 
-                        </div>
-                 
-                    <% } %>
-            </div>
+        <form  class="formularioRegistro" action='/register' method="post" enctype="multipart/form-data">
+            
+            
             <div class="etiqueta">
-                <label>Ingrese su Apellido</label>
-                    <input class="input" type="text" name="apellido" >
-                    <% if (locals.errors && errors.apellido) { %>
-                        <div class="texto-error">
-                            <%= errors.apellido.msg %> 
-                        </div>
-                     
-                    <% } %>
+
+                <label>Ingrese su Nombre:</label>
+                    <input class="input" type="text" name="nombre" value="<%=locals.old && old.nombre ? old.nombre :"" %> ">
+                    <div class="text-danger">
+                        
+                        <% if ( locals.errors && errors.nombre){ %>
+                            <p> <%= errors.nombre.msg %> </p>
+                        <% } %> 
+                       
+                    </div>
+
+                 
             </div>
+                 
+                    
+            
+            <div class="etiqueta">
+                <label>Ingrese su Apellido:</label>
+                    <input class="input" type="text" name="apellido" 
+                    value="<%=locals.old && old.apellido ? old.apellido :"" %>">
+
+                    <div class="text-danger">
+                        
+                        <% if ( locals.errors && errors.apellido){ %>
+                            <p> <%= errors.apellido.msg %> </p>
+                        <% } %> 
+                       
+                    </div>
+            </div>
+                  
+                   
+            
+            
             <div class="etiqueta">
                 <label >Ingese su Email</label>
-                    <input class="input" type="email" name="mailusuario" >
-                        <% if (locals.errors && errors.mailusuario) { %>
-                            <div class="texto-error">
-                                <%= errors.mailusuario.msg %> 
-                            </div>
-                     
-                        <% } %>
+                    <input class="input" type="email" name="mailusuario" value="<%=locals.old && old.mailusuario ? old.mailusuario :"" %>" >
+
+                    <div class="text-danger">
+
+
+                        <% if ( locals.errors && errors.mailusuario){ %>
+                            <%= errors.mailusuario.msg %> 
+                        
+                            <% } %> 
+                         
+                    </div>
+
             </div>
+                     
+                        
+            
             <div class="etiqueta">
                 <label>Ingrese su Contraseña:</label>
                     <input class="input" type="password" name="password">
-                    <% if (locals.errors && errors.password) { %>
-                        <div class="texto-error">
-                            <%= errors.password.msg %> 
-                        </div>
+                    <div class="text-danger">
+
+                        <% if ( locals.errors && errors.pais){ %>
+                            <%= errors.pais.msg %> 
+                            <% } %> 
+                            
+                    </div>
                      
-                    <% } %>
+                    
             </div>
                         
             <div class="etiqueta">
                 <label>Ingrese su Pais:</label>
-                    <input type="text" class="input" name="pais">
-                        
-                </div>
-                <div class="etiqueta">
-                    <label>Ingrese su Ciudad </label>
-                        <input type="text" class="input" name="ciudad">
+                    <input type="text" class="input" name="pais" value="<%=locals.old && old.pais ? old.pais :"" %>">
+                    <div class="text-danger">
+
+                        <% if ( locals.errors && errors.pais){ %>
+                            <%= errors.pais.msg %> 
+                            <% } %> 
                             
                     </div>
-                <div class="etiqueta">
-                        <label>Ingrese su Calle:</label>
-                            <input type="text" class="input" name="calle">
-                                
-                        </div>    
-                 <div class="etiqueta">
-                        <label>Ingrese su numero :</label>
-                            <input type="number" class="input" name="numero">
-                                    
-                            </div>
-
-                <div class="etiqueta">
-                    <label>Ingrese su Foto de Perfil:</label>
-                        <input  class="input" type="file" name="avatar" accept="image/*" >
-                        <% if (locals.errors && errors.avatar) { %>
-                            <div class="texto-error">
-                                <%= errors.avatar.msg %> 
-                            </div>
-                         
-                        <% } %>
-
-                </div> 
-                <br>
                 </div>
-                <div class="registro">
-                 <div class="etiqueta">
+            
+            <div class="etiqueta">
+                    <label>Ingrese su Ciudad </label>
+                        <input type="text" class="input" name="ciudad" value="<%=locals.old && old.ciudad ? old.ciudad :"" %>">
+                        <div class="text-danger">
+                            <% if ( locals.errors && errors.ciudad){ %>
+                                <%= errors.ciudad.msg %> 
+                                <% } %> 
+                                
+
+                        </div>
+            </div>
+                
+            <div class="etiqueta">
+                        <label>Ingrese su Calle:</label>
+                            <input type="text" class="input" name="calle" value="<%=locals.old && old.calle ? old.calle :"" %>">
+                            <div class="text-danger">
+
+                                <% if ( locals.errors && errors.calle){ %>
+                                    <%= errors.calle.msg %> 
+                                <% } %> 
+                                    
+
+                            </div>
+            </div>    
+
+            <div class="etiqueta">
+                        <label>Ingrese su numero :</label>
+                            <input type="number" class="input" name="numero" value="<%=locals.old && old.numero ? old.numero :"" %>">
+                            <div class="text-danger">
+
+                                <% if ( locals.errors && errors.numero){ %>
+                                     <%= errors.numero.msg %> 
+                                <% } %> 
+                                        
+
+                            </div>
+                </div>
+
+            <div class="etiqueta">
+                    <label>Ingrese su Foto de Perfil:</label>
+                        <input  class="input" type="file" name="avatar" accept="image/*"  >
+                       
+                    </div>
+                         
+                        
+
+             
+            
+             
+             <div class="etiqueta">
             
                 <input  class="botonEnvio" type="submit" value="Registrarme">
             
                     <p><a href="login">Usuario ya registrado?</a></p>
-              </div> 
-            </div>
+            </div> 
+            
 
 
 
