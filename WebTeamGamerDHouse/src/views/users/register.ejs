@@ -49,13 +49,13 @@
             
             <div class="etiqueta">
                 <label >Ingese su Email</label>
-                    <input class="input" type="email" name="mailusuario" value="<%=locals.old && old.mailusuario ? old.mailusuario :"" %>" >
+                    <input class="input" type="email" name="email" value="<%=locals.old && old.email ? old.email:"" %>" >
 
                     <div class="text-danger">
 
 
-                        <% if ( locals.errors && errors.mailusuario){ %>
-                            <%= errors.mailusuario.msg %> 
+                        <% if ( locals.errors && errors.email){ %>
+                            <%= errors.email.msg %> 
                         
                             <% } %> 
                          
@@ -68,11 +68,7 @@
             <div class="etiqueta">
                 <label>Ingrese su Contraseña:</label>
                     <input class="input" type="password" name="password">
-                    <div class="text-danger">
-
-                        <% if ( locals.errors && errors.pais){ %>
-                            <%= errors.pais.msg %> 
-                            <% } %> 
+                    <div class="text-danger">                    
                             
                     </div>
                      
