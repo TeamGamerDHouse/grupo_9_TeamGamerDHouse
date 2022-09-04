@@ -22,7 +22,7 @@ module.exports = (sequelize,dataTypes)=>{
             type:dataTypes.STRING
         },
         imagen:{
-            type:dataTypes.BLOB
+            type:dataTypes.STRING
         },
         id_genero:{
             type:dataTypes.INTEGER
