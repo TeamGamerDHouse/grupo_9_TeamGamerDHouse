@@ -6,15 +6,31 @@
     <main class="registro">
         <h2>Formulario de Registro de Usuario</h2>
 
-        <form  class="formularioRegistro" action="/user/login" method="post">
+        <form  class="formularioRegistro" action="/login" method="post">
             
             <div class="etiqueta">
                 <label >Ingese su Email</label>
-                    <input class="input" type="email" name="mailusuario" placeholder="Ingrese su Email">
+                    <input class="input" type="email" name="email" placeholder="Ingrese su Email">
+                    <div class="text-danger">
+                        <% if ( locals.errors && errors.email){ %>
+                           <p> <%= errors.email.msg %> </p>
+                        
+                            <% } %> 
+                         
+                    </div>
+
             </div>
             <div class="etiqueta">
                 <label>Ingrese su Contraseña:</label>
                     <input class="input" type="password" name="password"placeholder="Ingrese su contraseña">
+                    <div class="text-danger">
+                        <% if ( locals.errors && errors.password){ %>
+                           <p> <%= errors.password.msg %> </p>
+                        
+                            <% } %> 
+                         
+                    </div>
+
             </div> 
 
             <input  class="botonEnvio" type="submit" value="Ingresar">

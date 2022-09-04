@@ -31,7 +31,7 @@ const uploadFile = multer({ storage });
 const validations =[
     body('nombre').notEmpty().withMessage('Debe Completar el campo de Nombre'),
     body('apellido').notEmpty().withMessage('Debe Completar el campo de Apellido'),
-    body('mailusuario').notEmpty().withMessage('Debe Completar el campo de Email').bail()
+    body('email').notEmpty().withMessage('Debe Completar el campo de Email').bail()
         .isEmail().withMessage('Debe ser un email valido'),
     body('password').notEmpty().withMessage('Debe Completar el campo password'),
     body('pais').notEmpty().withMessage('Debe completar el campo Pais'),
@@ -41,20 +41,24 @@ const validations =[
        
 ];
 
-// RUTA LOGIN
-router.get('/login', usuarioController.login);
+//middleware
 
-
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 //ruta registro de usuario
-router.get('/register', usuarioController.register);
-
-
+router.get('/register',guestMiddleware ,usuarioController.register);
 
 //ruta post del registro de usuario
 
 router.post('/register',uploadFile.single('avatar'), validations, usuarioController.usuarioRegistrado);
 
+// RUTA LOGIN
+
+router.get('/login', guestMiddleware,usuarioController.login);
+
+router.post('/login',validations,usuarioController.logueado);
+
+router.get('/usuario/perfil', usuarioController.perfil);
 
 
 
@@ -67,7 +71,7 @@ router.get('/usuario/:id',usuarioController.detalleUsuario);
 
 router.get('/usuario/editar/:id', usuarioController.editar);
 
-router.put('/usuario/editar/:id',uploadFile.single('avatar'), usuarioController.editado);
+router.put('/usuario/editar/:id',uploadFile.single('avatar'),validations, usuarioController.editado);
 
 
 //DELETE

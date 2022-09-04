@@ -4,6 +4,9 @@ const express = require("express");
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const path =require("path");
+const bcryptjs = require('bcryptjs');
+const session = require('express-session');
+
 
 
 const publicPath = path.join(__dirname, '../public');
@@ -35,6 +38,11 @@ app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use(session({
+    secret:'es un secreto',
+    resave: false,
+    saveUninitialized: false
+}));
 
 
 //APP USO DE LAS RUTAS
