@@ -22,14 +22,14 @@ module.exports = (sequelize,dataTypes)=>{
             type:dataTypes.DATE
         },
         cantidad:{
-            type:dataTypes.DECIMAL
+            type:dataTypes.INTEGER
         }
        
 
     };
 
     const config={
-        tableName:"usuario_x_producto",
+        tableName:"usuarioXproducto",
         timestamps:false
     }
 

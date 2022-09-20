@@ -7,20 +7,21 @@
     <main class="containerProductos">
 
         <h2> lista de Productos </h2>
-                <% if(Array.isArray(allProducts)){%>
-                    <% for(let i=0;i < allProducts.length; i++){%>
+                <% if(Array.isArray(productos)){%>
+                    <% for(let i=0;i < productos.length; i++){%>
                     <li>
                             <p>
-                                <h5>Name: <%= allProducts[i].nombreProducto%></h5>
+                                <h5>Name: <%= productos[i].nombre%></h5>
                             </p>
                             <p>
-                                <h5>Precio: <%= allProducts[i].precio%></h5>
+                                <h5>Precio: <%= productos[i].precio%></h5>
                             </p>
                         </li>
                     <%}%>
-                    <%}else{%>
-                <h3>Name: <%= user.name%></h3>
+                  <%}else{%>
+                <h3>Genero: <%= prod%></h3>
                 <h3>E-mail: <%= user.email%></h3>
+                <h2>Descripcion: <%= producto.descripcion%></h2>
             <%}%>
        
  

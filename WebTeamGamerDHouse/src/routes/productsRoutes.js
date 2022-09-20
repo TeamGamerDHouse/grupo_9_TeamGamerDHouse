@@ -34,7 +34,7 @@ const uploadFile = multer({ storage });
 
 
 
-
+router.get('productos/detalle',productosController.productosDetalle)
 
 router.get('/productos', productosController.allProducts);
 
@@ -42,14 +42,15 @@ router.get('/productos', productosController.allProducts);
 router.get('/productos/create',productosController.crear);
 
 
-router.post('/productos/create',uploadFile.single('producto'), productosController.createProducts);
+router.post('/productos/create',uploadFile.single('imagen'), productosController.createProducts);
 
 router.get('/products/:id', productosController.productsId);
 
+//editar
 
-//router.get('/productos/:id/edit' );
+router.get('/productEdit/:id',productosController.editar);
 
-//router.put('/productos/:id' );
+router.put('/productos/:id',uploadFile.single('productImage'), productosController.editado );
 
 //router.delete('/productos/:id' )
 

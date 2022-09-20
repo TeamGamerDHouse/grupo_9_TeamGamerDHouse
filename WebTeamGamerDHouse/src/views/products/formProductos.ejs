@@ -7,21 +7,17 @@
         <main class="registro">
             <h2>Formulario de Carga de Productos</h2>
             
-            <form  class="formularioRegistro" action="/productos" method="post">
+            <form  class="formularioRegistro" action="/productos/create" method="post" enctype="multipart/form-data">
                 <div class="etiqueta">
                     <label>Genero:</label>
-                        <select  class="input" name="generos">
-
-                            <% for( let i = 0; i < productos.length; i++ ) { %>
+                        <select  class="input" name="genero">
                                 
 
-                                <option value="<%= productos[i].generos.id %> ">
-
-                                    <%= productos[i].generos.nombre%> 
-                                                                
-                                </option>
+                                <option value="deportes">Deportes</option>
+                                <option value="accion">Accion</option>
+                                <option value="suspenso">Suspenso</option>
                             
-                            <% } %>
+                            
                                                                                   
                         </select>
                        
@@ -29,17 +25,10 @@
                     </div>
                     <div class="etiqueta">
                         <label>Plataforma:</label>
-                            <select  class="input" name="plataformas">
-                                
-                                <% for( let i = 0; i < productos.length; i++ ) { %>
-                                    <option value="<%=productos[i].plataformas.id%> ">
-                                        
-                                        <%= productos[i].plataformas.nombre%> 
-    
-                                                                    
-                                    </option>
-                                
-                                <% } %>
+                            <select  class="input" name="plataforma">
+                                <option value="pc">PC</option>
+                                <option value="xbox">Xbox</option>
+                                <option value="playstation">PlayStation</option>
                                                                                       
                             </select>
                            

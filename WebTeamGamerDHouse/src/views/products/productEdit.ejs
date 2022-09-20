@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+
+        
+    <main class="registro">
+
+        <h2>Editar Producto : <%= producto.nombre %> </h2>
+
+        <form  class="formularioRegistro" action='/producto/editar/<%= producto.id %>?_method=PUT' method="post" enctype="multipart/form-data">
+            <div class="etiqueta">
+                <label>Nombre del producto:</label>
+                    <input class="input" type="text" name="nombre" value="<%= producto.nombre %> ">
+
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="texto-error">
+                            <%= errors.nombre.msg %> 
+                        </div>
+                 
+                    <% } %>
+            </div>
+            <div class="etiqueta">
+                <label>Ingrese la descripcion</label>
+                    <input class="input" type="text" name="descripcion"value="<%= producto.descripcion %>" >
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <div class="texto-error">
+                            <%= errors.descripcion.msg %> 
+                        </div>
+                     
+                    <% } %>
+            </div>
+            <div class="etiqueta">
+                <label >Ingrese el precio</label>
+                    <input class="input" type="number" name="precio" value="<%= producto.precio %>" >
+                        <% if (locals.errors && errors.precio) { %>
+                            <div class="texto-error">
+                                <%= errors.precio.msg %> 
+                            </div>
+                     
+                        <% } %>
+            </div>
+           
+
+                <div class="etiqueta">
+                    <label>Ingrese imagen del producto:</label>
+                        <input  class="input" type="file" name="productoimage" accept="image/*" >
+                        <% if (locals.errors && errors.productoimage) { %>
+                            <div class="texto-error">
+                                <%= errors.productoimage.msg %> 
+                            </div>
+                         
+                        <% } %>
+
+                </div> 
+                <br>
+                </div>
+                <div class="registro">
+                 <div class="etiqueta">
+            
+                <input  class="botonEnvio" type="submit" value="GUARDAR PRODUCTO">
+            
+                    
+              </div> 
+            </div>
+
+
+
+        </form>
+
+    
+
+    </main>
+   
+    <%- include('../partials/footer.ejs')%>
+
+  
+</body>
+</html>

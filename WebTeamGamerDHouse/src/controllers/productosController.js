@@ -25,31 +25,31 @@ const productosController = {
     
     crear: (req,res)=>{
 
-        db.Productos.findAll({
-            include:[
-                {
-                    association: 'generos'
-                },
-                {
-                    association:"plataformas"
-                }
+         db.Productos.findAll()
+        //     include:[
+        //         {
+        //             association: 'generos'
+        //         },
+        //         {
+        //             association:"plataformas"
+        //         }
                
-            ]
-        })
-            .then (productos =>{
+        //     ]
+        // })
+        .then(productos =>{
 
-                
+              
 
-                res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{productos:productos})
-            });
+                res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{productos:productos})   
+    }
+        )
+},
 
+    createProducts : (req, res)=>{
         
-        
-    },
+        db.Productos.create({
 
-    createProducts: (req, res)=>{
-
-        db.Producto.create({
+            
 
             genero:req.body.genero,
             plataforma:req.body.plataforma,
@@ -60,33 +60,60 @@ const productosController = {
 
             })
                 .then(productos =>{
-                    res.render('productos')
+                    res.render(path.join(__dirname, '../views/products/productos.ejs'))
                 });
         
 
 
 
     },
+    productosDetalle: (req,res) =>{
+        res.render(path.join(__dirname, '../views/products/detalleProductos.ejs'),{productos:productos})
+       
+    },
     productsId: (req, res) =>{
 
         db.Producto.findbyPk()
             .then()
-    }
+    },
+    editar:(req,res)=>{
+        
+        db.Producto.findByPk(req.params.id)
+        .then(producto =>{
+            res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{producto:producto})
+        });
+        
+    },
+    editado:(req,res)=>{
+        
+        db.Producto.update({
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            imagenusuario: req.file ? req.file.filename : productImage
+            
+        
+        },
+        {
+            where: {
+                id:req.params.id
+            }
+        });
+        res.redirect('/productos/'+req.params.id)
 
 
-
+},  eliminar:(req,res)=>{
+        
+        db.Producto.destroy({
+         where:{
+              id:req.params.id
+          }
+     });
     
-    
-    
-
-
-    
-
-
-
+        res.redirect('/productos')
 }
 
-
+}
 
 
 
