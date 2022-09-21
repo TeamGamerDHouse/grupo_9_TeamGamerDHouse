@@ -32,6 +32,26 @@
                     <% } %>
             </div>
             <div class="etiqueta">
+                <label >Ingrese el genero</label>
+                    <input class="input" type="text" name="genero" value="<%= producto.genero %>" >
+                        <% if (locals.errors && errors.genero) { %>
+                            <div class="texto-error">
+                                <%= errors.genero.msg %> 
+                            </div>
+                     
+                        <% } %>
+            </div>
+            <div class="etiqueta">
+                <label >Ingrese la plataforma</label>
+                    <input class="input" type="text" name="plataforma" value="<%= producto.plataforma %>" >
+                        <% if (locals.errors && errors.plataforma) { %>
+                            <div class="texto-error">
+                                <%= errors.plataforma.msg %> 
+                            </div>
+                     
+                        <% } %>
+            </div>
+            <div class="etiqueta">
                 <label >Ingrese el precio</label>
                     <input class="input" type="number" name="precio" value="<%= producto.precio %>" >
                         <% if (locals.errors && errors.precio) { %>

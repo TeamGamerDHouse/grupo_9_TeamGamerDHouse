@@ -60,25 +60,29 @@ const productosController = {
 
             })
                 .then(productos =>{
-                    res.render(path.join(__dirname, '../views/products/productos.ejs'))
+                    res.render(path.join(__dirname, '../views/products/productos.ejs'),{productos:productos})
                 });
         
 
 
 
     },
-    productosDetalle: (req,res) =>{
-        res.render(path.join(__dirname, '../views/products/detalleProductos.ejs'),{productos:productos})
+    productoDetalle: (req,res) =>{
+             db.Productos.findByPk(req.params.id)
+                 .then(productos =>{
+                     res.render(path.join(__dirname,'../views/products/detalleProductos.ejs'),{productos})
+                 });
+        
        
     },
-    productsId: (req, res) =>{
+     productsId: (req, res) =>{
 
-        db.Producto.findbyPk()
-            .then()
+         db.Producto.findbyPk()
+             .then()
     },
     editar:(req,res)=>{
         
-        db.Producto.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id)
         .then(producto =>{
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{producto:producto})
         });

@@ -14,14 +14,15 @@
                                 <h5>Name: <%= productos[i].nombre%></h5>
                             </p>
                             <p>
+                                <h5>Descripcion: <%= productos[i].descripcion%></h5>
+                            </p>
+                            <p>
                                 <h5>Precio: <%= productos[i].precio%></h5>
                             </p>
+                            <img src="/image/imagenArticulos/<%=productos[i].imagen%> " alt="">
                         </li>
                     <%}%>
                   <%}else{%>
-                <h3>Genero: <%= prod%></h3>
-                <h3>E-mail: <%= user.email%></h3>
-                <h2>Descripcion: <%= producto.descripcion%></h2>
             <%}%>
        
  

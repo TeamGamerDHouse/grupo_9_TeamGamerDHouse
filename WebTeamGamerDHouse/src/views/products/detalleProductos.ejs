@@ -6,9 +6,42 @@
     
 <body>
     <main class="containerProductos">
-       
+        <section>
+            <div>
 
-<h2>estoy funcionando</h2>
+                <h2>Producto Solictado:  ID N° <%= productos.id%>  </h2>
+
+            </div>    
+                <div>
+                    <ul>
+
+                        <li>
+                            <h3>Nombre: <%= productos.nombre%></h3>
+
+                        </li>
+
+                        <li>
+                            <h3>Descripcion: <%= productos.descripcion%></h3>
+
+                        </li>
+                        
+                        <li>
+                            <h3>Precio: <%= productos.precio%> </h3>
+
+                        </li>
+                        <li>
+                            <img src="/image/imagenArticulos/<%=productos.imagen%> " alt="">
+                        </li>
+                    </ul>
+
+
+
+            </div>
+            <br>
+            
+        </section>
+
+
 
     </main>
     <%- include('../partials/footer.ejs') %> 
