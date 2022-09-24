@@ -3,12 +3,12 @@ const db = require('../../database/models/index');
 
 const indexController ={
 
-    vista: async (req, res)=>{
+    vista: (req, res)=>{
 
-       const base = await db.Productos.findAll()
+       db.Productos.findAll()
           .then(productos=> {
               
-              res.redirect(('/'),{productos});
+            return res.render(path.join(__dirname, '../views/users/index.ejs'),{ productos:productos })
           });
         
     
