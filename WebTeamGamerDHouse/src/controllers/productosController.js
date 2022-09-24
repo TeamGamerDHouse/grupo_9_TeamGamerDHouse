@@ -28,7 +28,7 @@ const productosController = {
          db.Productos.findAll()
         //     include:[
         //         {
-        //             association: 'generos'
+        //             association: '
         //         },
         //         {
         //             association:"plataformas"
@@ -93,6 +93,8 @@ const productosController = {
         db.Producto.update({
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
+            genero: req.body.genero,
+            plataforma: req.body.plataforma,
             precio: req.body.precio,
             imagenusuario: req.file ? req.file.filename : productImage
             
@@ -103,7 +105,7 @@ const productosController = {
                 id:req.params.id
             }
         });
-        res.redirect('/productos/'+req.params.id)
+        res.redirect('/producto/detalle/'+req.params.id)
 
 
 },  eliminar:(req,res)=>{

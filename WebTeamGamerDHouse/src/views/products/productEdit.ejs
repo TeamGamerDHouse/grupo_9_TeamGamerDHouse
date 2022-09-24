@@ -33,23 +33,23 @@
             </div>
             <div class="etiqueta">
                 <label >Ingrese el genero</label>
-                    <input class="input" type="text" name="genero" value="<%= producto.genero %>" >
-                        <% if (locals.errors && errors.genero) { %>
-                            <div class="texto-error">
-                                <%= errors.genero.msg %> 
-                            </div>
-                     
-                        <% } %>
+                    
+                    <select  class="input" type="text" name="genero" value="<%= producto.genero %>">
+                                
+                        <option value="deportes">Deportes</option>
+                        <option value="accion">Accion</option>
+                        <option value="suspenso">Suspenso</option>
+                                                                          
+                    </select>
             </div>
             <div class="etiqueta">
                 <label >Ingrese la plataforma</label>
-                    <input class="input" type="text" name="plataforma" value="<%= producto.plataforma %>" >
-                        <% if (locals.errors && errors.plataforma) { %>
-                            <div class="texto-error">
-                                <%= errors.plataforma.msg %> 
-                            </div>
-                     
-                        <% } %>
+                <select  class="input" type="text" name="plataforma" value="<%= producto.plataforma %>">              
+                    <option value="pc">PC</option>
+                    <option value="xbox">Xbox</option>
+                    <option value="playstation">PlayStation</option>
+                                                                      
+                </select>
             </div>
             <div class="etiqueta">
                 <label >Ingrese el precio</label>
