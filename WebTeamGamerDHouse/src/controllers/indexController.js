@@ -1,11 +1,20 @@
 const path= require('path');
+const db = require('../../database/models/index');
 
 const indexController ={
 
-    vista: (req, res)=>{
+    vista: async (req, res)=>{
 
-        res.render(path.join(__dirname, '../views/users/index.ejs'));
-    }
+       const base = await db.Productos.findAll()
+          .then(productos=> {
+              
+              res.redirect(('/'),{productos});
+          });
+        
+    
+
+    
+}
 }
 
 module.exports = indexController;

@@ -26,19 +26,7 @@ const productosController = {
     crear: (req,res)=>{
 
          db.Productos.findAll()
-        //     include:[
-        //         {
-        //             association: '
-        //         },
-        //         {
-        //             association:"plataformas"
-        //         }
-               
-        //     ]
-        // })
-        .then(productos =>{
-
-              
+            .then(productos =>{
 
                 res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{productos:productos})   
     }
@@ -60,7 +48,7 @@ const productosController = {
 
             })
                 .then(productos =>{
-                    res.render(path.join(__dirname, '../views/products/productos.ejs'),{productos:productos})
+                    res.redirect('/productos')
                 });
         
 
