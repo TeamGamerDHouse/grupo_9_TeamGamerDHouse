@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs') %>
+    <script src="js/formRegister.js"></script>
 <body>
     <%- include('../partials/header.ejs') %>
 
@@ -16,7 +17,7 @@
             <div class="etiqueta">
 
                 <label>Ingrese su Nombre:</label>
-                    <input class="input" type="text" name="nombre" value="<%=locals.old && old.nombre ? old.nombre :"" %> ">
+                    <input class="input" type="text" name="nombre" id="nombre" value="<%=locals.old && old.nombre ? old.nombre :"" %> ">
                     <div class="text-danger">
                         
                         <% if ( locals.errors && errors.nombre){ %>
@@ -32,7 +33,7 @@
             
             <div class="etiqueta">
                 <label>Ingrese su Apellido:</label>
-                    <input class="input" type="text" name="apellido" 
+                    <input class="input" type="text" name="apellido" id="apellido"
                     value="<%=locals.old && old.apellido ? old.apellido :"" %>">
 
                     <div class="text-danger">
@@ -49,7 +50,7 @@
             
             <div class="etiqueta">
                 <label >Ingese su Email</label>
-                    <input class="input" type="email" name="email" value="<%=locals.old && old.email ? old.email:"" %>" >
+                    <input class="input" type="email" name="email" id="email" value="<%=locals.old && old.email ? old.email:"" %>" >
 
                     <div class="text-danger">
 
@@ -67,7 +68,7 @@
             
             <div class="etiqueta">
                 <label>Ingrese su Contraseña:</label>
-                    <input class="input" type="password" name="password">
+                    <input class="input" type="password" name="password" id="password">
                     <div class="text-danger">                    
                             
                     </div>
@@ -77,7 +78,8 @@
                         
             <div class="etiqueta">
                 <label>Ingrese su Pais:</label>
-                    <input type="text" class="input" name="pais" value="<%=locals.old && old.pais ? old.pais :"" %>">
+
+                    <input type="text" class="input" name="pais" id="pais" value="<%=locals.old && old.pais ? old.pais :"" %>">
                     <div class="text-danger">
 
                         <% if ( locals.errors && errors.pais){ %>
@@ -89,7 +91,7 @@
             
             <div class="etiqueta">
                     <label>Ingrese su Ciudad </label>
-                        <input type="text" class="input" name="ciudad" value="<%=locals.old && old.ciudad ? old.ciudad :"" %>">
+                        <input type="text" class="input" name="ciudad" id="ciudad" value="<%=locals.old && old.ciudad ? old.ciudad :"" %>">
                         <div class="text-danger">
                             <% if ( locals.errors && errors.ciudad){ %>
                                 <%= errors.ciudad.msg %> 
@@ -101,7 +103,7 @@
                 
             <div class="etiqueta">
                         <label>Ingrese su Calle:</label>
-                            <input type="text" class="input" name="calle" value="<%=locals.old && old.calle ? old.calle :"" %>">
+                            <input type="text" class="input" name="calle" id="calle" value="<%=locals.old && old.calle ? old.calle :"" %>">
                             <div class="text-danger">
 
                                 <% if ( locals.errors && errors.calle){ %>
@@ -114,7 +116,7 @@
 
             <div class="etiqueta">
                         <label>Ingrese su numero :</label>
-                            <input type="number" class="input" name="numero" value="<%=locals.old && old.numero ? old.numero :"" %>">
+                            <input type="number" class="input" name="numero" id="numero" value="<%=locals.old && old.numero ? old.numero :"" %>">
                             <div class="text-danger">
 
                                 <% if ( locals.errors && errors.numero){ %>
@@ -138,7 +140,7 @@
              
              <div class="etiqueta">
             
-                <input  class="botonEnvio" type="submit" value="Registrarme">
+                <input  class="botonEnvio" type="submit" id="boton"value="Registrarme">
             
                     <p><a href="login">Usuario ya registrado?</a></p>
             </div> 
