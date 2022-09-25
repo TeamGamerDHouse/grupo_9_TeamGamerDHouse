@@ -39,6 +39,9 @@ module.exports = (sequelize,dataTypes)=>{
         },
         numero:{
             type:dataTypes.STRING
+        },
+        rol: {
+            type:dataTypes.STRING
         }
 
     };

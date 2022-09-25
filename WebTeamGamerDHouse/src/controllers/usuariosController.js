@@ -51,13 +51,14 @@ const usuarioController = {
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
-                contraseña: bcryptjs.hashSync(req.body.password),
-                imagenusuario: req.file ? req.file.filename : productImage
+                contraseña: bcryptjs.hashSync(req.body.password, 10),
+                imagenusuario: req.file ? req.file.filename : "avatarNN.png"
                 ,
                 pais: req.body.pais,
                 ciudad: req.body.ciudad,
                 calle: req.body.calle,
-                numero: req.body.numero
+                numero: req.body.numero,
+                rol: req.body.rol ? req.body.rol : "1"
             });
     
          return res.redirect('login');
@@ -120,13 +121,14 @@ const usuarioController = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            contraseña: bcryptjs.hashSync(req.body.password),
-            imagenusuario: req.file ? req.file.filename : productImage
+            contraseña: bcryptjs.hashSync(req.body.password, 10),
+            imagenusuario: req.file ? req.file.filename : "avatarNN.png"
             ,
             pais: req.body.pais,
             ciudad: req.body.ciudad,
             calle: req.body.calle,
-            numero: req.body.numero
+            numero: req.body.numero,
+            rol: req.body.rol ? req.body.rol : "1"
         },
         {
             where:{
