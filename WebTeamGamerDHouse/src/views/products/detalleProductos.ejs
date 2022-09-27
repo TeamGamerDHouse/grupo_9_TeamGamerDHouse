@@ -6,35 +6,31 @@
     
 <body>
     <main class="containerProductos">
-        <section>
-            <div>
+        <section class="container sproduct  pt-5">
+           
+                <div class=" row mt-5">
+                    
+                        <div class="col-lg-5 col-md-12 col-12 mx-auto">
+                        <img class="img-fluid w-100" src="/image/imagenArticulos/<%=productos.imagen%> " alt="">
+                        </div>
 
-                <h2>Producto Solictado:  ID N° <%= productos.id%>  </h2>
-
-            </div>    
-                <div>
-                    <ul>
-
-                        <li>
-                            <h3>Nombre: <%= productos.nombre%></h3>
-
-                        </li>
-
-                        <li>
-                            <h3>Descripcion: <%= productos.descripcion%></h3>
-
-                        </li>
-                        
-                        <li>
-                            <h3>Precio: <%= productos.precio%> </h3>
-
-                        </li>
-                        <li>
-                            <img src="/image/imagenArticulos/<%=productos.imagen%> " alt="">
-                        </li>
-                    </ul>
-
-
+                        <div class="col-lg-5 col-md-12 col-12">
+                            <h6>Home / productos</h6>
+                            <h2 class="py-4"><%= productos.nombre%></h2>
+                            <h3>$ <%= productos.precio%> </h3>
+                            <select class="my-3">
+                                <option value="">Selecciona plataforma</option>
+                                <option value="">PC</option>
+                                <option value="">Xbox</option>
+                                <option value="">PlayStation</option>
+                            </select>
+                            <input type="number" value="1">
+                            <button class="buy-btn">Agregar al carrito</button>
+                            <H4 class="mt-5 mb-5">Detalles de producto</H4>
+                            <span><%= productos.descripcion%></span>
+                        </div>
+                       
+        
 
             </div>
             <br>
