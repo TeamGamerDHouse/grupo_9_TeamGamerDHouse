@@ -17,6 +17,7 @@ const productsRouter = require('./routes/productsRoutes');
 const generosRoutes =require('./routes/generosRoutes');
 const plataformaRutes =require('./routes/plataformaRoutes');
 const indexRoutes = require ('./routes/indexRoutes');
+const apiRoutes =require('./routes/api/apiUsuariosRoutes');
 
 
 
@@ -53,6 +54,8 @@ app.use(usuariosRoutes);
 app.use(productsRouter);
 app.use(generosRoutes);
 app.use(plataformaRutes);
+app.use(apiRoutes);
+
 
 
 

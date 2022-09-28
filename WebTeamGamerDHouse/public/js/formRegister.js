@@ -30,6 +30,7 @@ window.addEventListener('load',()=>{
         ciudad.style.color ='blue'
         
     })
+    
 
 
 
