@@ -1,5 +1,3 @@
-
-const { response } = require('express');
 const db= require('../../../database/models/index');
 const OP= db.sequelize.Op;
 
@@ -25,6 +23,36 @@ const apiControllerProductos = {
 
                 })
             })
+    },
+    create: async (req,res) =>{        
+
+        const {
+            genero,
+            plataforma,
+            nombre,
+            descripcion,
+            precio,
+            imagen,
+            } =req.body;
+    
+        const newProducto ={
+            genero,
+            plataforma,
+            nombre,
+            descripcion,
+            precio,
+            imagen,
+            }
+        try {
+            await db.Productos.create(newProducto);
+            res.status(200).json(newProducto)
+            
+        } catch (error) {
+            console.log(error)
+            
+        }
+    
+            
     }
 
 
