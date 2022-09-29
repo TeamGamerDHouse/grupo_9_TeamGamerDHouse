@@ -2,7 +2,7 @@ const path =require('path');
 const { validationResult }= require('express-validator');
 const bcryptjs =require('bcryptjs');
 const db= require('../../../database/models/index');
-const OP= db.sequelize.Op;
+//const OP= db.sequelize.Op;
 
 const apiControllerUsuarios ={
 
