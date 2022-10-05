@@ -3,6 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const path = require ('path')
 
+
+//Requiere controloador Usuarios
 const usuarioController = require('../controllers/usuariosController');
 
 

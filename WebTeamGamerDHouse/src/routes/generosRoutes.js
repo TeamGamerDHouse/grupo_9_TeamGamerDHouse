@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {body}= require('express-validator')
-const multer = require('multer');
+
 const path = require('path');
 
 const generosController =require('../controllers/generosController');
