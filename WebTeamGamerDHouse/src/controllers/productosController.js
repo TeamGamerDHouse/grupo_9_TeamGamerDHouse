@@ -63,11 +63,7 @@ const productosController = {
         
        
     },
-     productsId: (req, res) =>{
-
-         db.Producto.findbyPk()
-             .then()
-    },
+   
     editar:(req,res)=>{
         
         db.Productos.findByPk(req.params.id)

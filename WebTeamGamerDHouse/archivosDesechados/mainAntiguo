@@ -1,0 +1,67 @@
+<!-- <li class="product-card">
+             <picture>
+                <img src="/image/Logo/Destini.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+          <li class="product-card">
+             <picture>
+                <img src="/image/Logo/resident.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+          <li class="product-card">
+            <picture>
+                <img src="/image/Logo/resident.jpg" alt="">
+            </picture>
+            <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 7899.00</p>
+                <nav>
+                  <a href="/products/detail"><i class="fa-solid fa-eye"></i></a>
+              </nav>
+            </article>
+          </li>
+        </ul>
+        </section>
+        <section class="products" class="notebooks">
+               <h2>NOTEBOOKS</h2>
+          <ul class="product-list">
+            <li class="product-card">
+              <picture>
+                <img src="/image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
+              </picture>
+              <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 140.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+                </nav>
+              </article>
+            </li>
+            <li class="product-card">
+              <picture>
+                <img src="/image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
+              </picture>
+              <article>
+                <h3>Nuevo Producto</h3>
+                <p>Precio: $ 250.00</p>
+                <nav>
+                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
+                </nav>
+              </article>
+            </li>
+          </ul>
+        </section> -->

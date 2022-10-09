@@ -44,7 +44,7 @@ router.get('/productos/create',productosController.crear);
 
 router.post('/productos/create',uploadFile.single('imagen'), productosController.createProducts);
 
-router.get('/products/:id', productosController.productsId);
+
 
 //editar
 

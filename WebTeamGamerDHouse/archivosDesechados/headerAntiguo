@@ -1,0 +1,28 @@
+ <!-- <picture id="brand">
+            <img src="/image/Logo/logoTeamGamerDHouse.jpeg" id="logo" alt="logo">
+        </picture>
+      
+        <form class="search-box">
+          <input class="search-texto" type="search" name="search" id="search" placeholder="Que producto buscas?">
+          <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      
+        <nav class="navigation" id="nav-user">
+          <a href="/login"> <i class="fa-solid fa-user"></i> Mi cuenta </a>
+          <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i>Mi carrito</a>
+        </nav>
+      
+        <nav class="navigation" id="main-nav">
+          <a href="#menu"><i class="fa-solid fa-bars"></i> Buscar por categoria</a>
+          <a href="/">Ofertas</a>
+          <a href="/productos">Productos</a>
+          <a href="/categoria/accesorios">Accesorios</a>
+        </nav>
+      
+        <nav id="menu">
+            <a  href="#"> <i class="fa-solid fa-times"></i></a>
+          <a href="/categoria/notebooks">Notebooks</a>
+          <a href="/categoria/computadoras">Computadoras</a>
+          <a href="/categoria/componentes">Componentes</a>
+          <a href="/categoria/accesorios">Accesorios</a>
+        </nav> -->

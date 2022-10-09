@@ -1,71 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/images/logo/logoTeamGamerDHouse">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <script src="https://kit.fontawesome.com/fb9ec8629a.js" crossorigin="anonymous"></script>
-     
+  <head>
+    <%- include('../partials/head.ejs') %> 
     <title>TeamGamerDHouse</title>
-</head>
-<body>
+  </head>
+  <body>
     <header id="main-header">
-
-        <picture id="brand">
-            <img src="/image/Logo/logoTeamGamerDHouse.jpeg" id="logo" alt="logo">
-        </picture>
-      
-        <form class="search-box">
-          <input class="search-texto" type="search" name="search" id="search" placeholder="Que producto buscas?">
-          <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-      
-        <nav class="navigation" id="nav-user">
-          <a href="/login"> <i class="fa-solid fa-user"></i> Mi cuenta </a>
-          <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i>Mi carrito</a>
-        </nav>
-      
-        <nav class="navigation" id="main-nav">
-          <a href="#menu"><i class="fa-solid fa-bars"></i> Buscar por categoria</a>
-          <a href="/">Ofertas</a>
-          <a href="/productos">Productos</a>
-          <a href="/categoria/accesorios">Accesorios</a>
-        </nav>
-      
-        <nav id="menu">
-            <a  href="#"> <i class="fa-solid fa-times"></i></a>
-          <a href="/categoria/notebooks">Notebooks</a>
-          <a href="/categoria/computadoras">Computadoras</a>
-          <a href="/categoria/componentes">Componentes</a>
-          <a href="/categoria/accesorios">Accesorios</a>
-        </nav>
-      
-      </header>
+      <%- include('../partials/header.ejs') %>
+    </header>
 
       <!--Empieza el contenido-->
-      <main>
+    <main>
+      <picture id="portada">
+        <img src="/image/portada/portada-juegos.jpg"  alt="portada-juegos">
+      </picture>
+      
+      <section class="products" id="gamesps">
+          <h2>GAMES</h2>
 
-        <picture id="portada">
-            <img src="/image/portada/portada-juegos.jpg"  alt="portada-juegos">
-        </picture>
-        
-
-
-        <section class="products" id="gamesps">
-            <h2>GAMES</h2>
-
-            <ul class="product-list">
+          <ul class="product-list">
               <% if(Array.isArray(productos)){%>
                 <% for(let i=0;i < productos.length; i++){%>
 
                   <li class="product-card">
-                    <picture>
+                    <div class="card" style="width: 18rem;">
+                      <img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title text-center "><%= productos[i].nombre%></h5>
+                        <h5 class="card-title">Precio: $<%= productos[i].precio%></h5>
+                        <a href="/producto/detalle/<%=productos[i].id%> " class="btn btn-primary">Ver Detalle</a>
+                      </div>
+                    </div>
+                    <!-- <picture>
                     <img src="/image/imagenArticulos/<%=productos[i].imagen%>"  alt="">
                     </picture>
                     <article>
@@ -74,112 +40,19 @@
                         <nav>
                           <a href="/producto/detalle/<%=productos[i].id%> "> <i class="fa-solid fa-eye"></i></a>
                         </nav>
-                    </article>
+                    </article> -->
                   </li>
           <% } %> 
           <% } %> 
-          <!-- <li class="product-card">
-             <picture>
-                <img src="/image/Logo/Destini.jpg" alt="">
-            </picture>
-            <article>
-                <h3>Nuevo Producto</h3>
-                <p>Precio: $ 7899.00</p>
-                <nav>
-                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
-              </nav>
-            </article>
-          </li>
-          <li class="product-card">
-             <picture>
-                <img src="/image/Logo/resident.jpg" alt="">
-            </picture>
-            <article>
-                <h3>Nuevo Producto</h3>
-                <p>Precio: $ 7899.00</p>
-                <nav>
-                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
-              </nav>
-            </article>
-          </li>
-          <li class="product-card">
-            <picture>
-                <img src="/image/Logo/resident.jpg" alt="">
-            </picture>
-            <article>
-                <h3>Nuevo Producto</h3>
-                <p>Precio: $ 7899.00</p>
-                <nav>
-                  <a href="/products/detail"><i class="fa-solid fa-eye"></i></a>
-              </nav>
-            </article>
-          </li>
-        </ul>
-        </section>
-        <section class="products" class="notebooks">
-               <h2>NOTEBOOKS</h2>
-          <ul class="product-list">
-            <li class="product-card">
-              <picture>
-                <img src="/image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
-              </picture>
-              <article>
-                <h3>Nuevo Producto</h3>
-                <p>Precio: $ 140.00</p>
-                <nav>
-                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
-                </nav>
-              </article>
-            </li>
-            <li class="product-card">
-              <picture>
-                <img src="/image/Imagenes Productos/notebooks/600_750-402083_001.jpg" alt="">
-              </picture>
-              <article>
-                <h3>Nuevo Producto</h3>
-                <p>Precio: $ 250.00</p>
-                <nav>
-                  <a href="/products/detail"> <i class="fa-solid fa-eye"></i></a>
-                </nav>
-              </article>
-            </li>
-          </ul>
-        </section> -->
+        
     </main>
     
     
    
    <footer>
     
-        <section class="contactos">
-            <h2><marquee >Seguinos en las Redes</marquee> </h2>
-                <div class="redes">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-twitter"></i>
-      
-                 </div>
-                    
-                <div>
-                    <ul class="cel">
-                      <li class="iconowas">Whatsapp <i class="fa-brands fa-whatsapp"></i></li>
-                 
-                                                                            
-                        </ul>
-                   </div>
-    
-        </section>
-
-        <section>
-            <div class="pie">
-                    <ul class="pielista">
-                        <li><a href="#">Quienes Somos</a></li>
-                        <li><a href="#">Locales</a></li>
-                        <li><a href="#">Todas las categorias</a></li>
-                    </ul>
-            </div>
-        </section>          
+    <%- include('../partials/footer.ejs')  %> 
+        
 
     </footer>
 </body>
