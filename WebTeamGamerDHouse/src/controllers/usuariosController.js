@@ -2,6 +2,7 @@ const path =require('path');
 const { validationResult }= require('express-validator');
 const bcryptjs =require('bcryptjs');
 const db= require('../../database/models/index');
+const { dirname } = require('path');
 
 
 
@@ -16,6 +17,7 @@ const usuarioController = {
     // controler de ruta de registro
 
     register: (req,res) => {
+        //res.cookie('testing','hola planeto!!'),{maxAge:1000 * 30 };
         res.render(path.join(__dirname, '../views/users/register.ejs'));
 
     },
@@ -52,8 +54,7 @@ const usuarioController = {
                 apellido: req.body.apellido,
                 email: req.body.email,
                 contraseña: bcryptjs.hashSync(req.body.password, 10),
-                imagenusuario: req.file ? req.file.filename : "avatarNN.png"
-                ,
+                imagenusuario: req.file ? req.file.filename : "avatarNN.png",
                 pais: req.body.pais,
                 ciudad: req.body.ciudad,
                 calle: req.body.calle,
@@ -61,7 +62,7 @@ const usuarioController = {
                 rol: req.body.rol ? req.body.rol : "1"
             });
     
-         return res.redirect('login');
+         return res.redirect('/login');
             
         }else{
 
@@ -82,8 +83,7 @@ const usuarioController = {
         db.Usuario.findAll()
             .then(usuarios =>{
                 return res.render(path.join(__dirname,'../views/users/listadeusuarios.ejs'),{usuarios:usuarios});
-            })
-            console.log(req.session.usuarioConectado);
+            });
     },
 
     // usuario por ID (byPK)
@@ -109,7 +109,7 @@ const usuarioController = {
         .then(usuario =>{
             res.render(path.join(__dirname, '../views/users/usuarioEdit.ejs'),{usuario:usuario})
         });
-        console.log(req.session.usuarioConectado)
+        
         
     },
     
@@ -168,11 +168,12 @@ const usuarioController = {
 
             if(igualar){
 
-            let usuarioLogueado = usuario         
-            req.session.usuarioConectado = usuarioLogueado;
-               //return res.render(path.join(__dirname, '../views/users/perfil.ejs'),{ usuario })
-            return res.render(path.join(__dirname, '../views/users/perfil.ejs'),{ usuario })
-
+                req.session.usuarioLogueado = usuario;
+                
+                                     
+                return res.redirect('/profile');
+                //return res.render(path.join(__dirname, '../views/users/perfil.ejs'),{ usuario:usuario})
+                
                 }else{
                     return res.render(path.join(__dirname, '../views/users/login.ejs'),{
                         errors:{
@@ -195,14 +196,26 @@ const usuarioController = {
   
        
 },
-    perfil: (req,res)=>{
+    profile: (req,res)=>{
 
-        console.log(req.session.usuarioConectado);
+        console.log('estas en profile');
+
+        console.log(req.session);
 
 
-       return res.render(path.join-(__dirname,'../views/users/perfil.ejs'),{usuario})
+       return res.render(path.join(__dirname,'../views/users/userProfile.ejs'), {
 
-}
+        user: req.session.usuarioLogueado
+       });
+
+    },
+    logout:(req,res)=>{
+
+        req.session.destroy();
+        res.cookie('userCookie', null, { maxAge: 1 });
+        return res.redirect('/')
+
+    }
 }
 
 

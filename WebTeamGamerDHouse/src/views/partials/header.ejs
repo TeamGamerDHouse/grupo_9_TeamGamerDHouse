@@ -1,12 +1,12 @@
  <header id="main-header">
 
-  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top miNavBar p-1" >
+  <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed-top miNavBar p-1 " >
     <a class="navbar-brand p-3 fw-bolder text-success border border-success" href="/">TEAM GAMER DHOUSE</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <div class="collapse navbar-collapse container-fluid " id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto " >
         <li class="nav-item active">
           <a class="nav-link " href="/" >Inicio <span class="sr-only">(current)</span></a>
@@ -19,23 +19,30 @@
         </li>
       </ul>
       <ul class="my-2 my-lg-0 navbar-nav">
-      <% if(locals.usuario) { %> 
-              <!--Aquí dispongo  el acceso sólo al o los usuarios administradores-->
-        <% if(locals.usuario.role===9) { %>
+      <% if(locals.logueado) { %> 
+                 <!--para admin-->
+        <% if(locals.logueado.rol === 9 ) { %>
           <li class="nav-item">
               <a class="nav-link" href="/administrar">Administrar</a>
           </li>
         <%}%>  
+
+                <!--para User y Admin-->
+
+        <li class="nav-item">
+          <a class="nav-link" href="/usuario/<%=logueado.id %>"> Hola <%= logueado.nombre %> </a>
+
+        </li>
   
+        <li class="nav-item">
+          <img src="/image/avatar/<%=logueado.imagenusuario %>"   width = '30' style= 'border-radius: 100%;'alt="">
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Cerrar sesión<ion-icon name="log-out-outline"></ion-icon></a>
         </li>
-        <li class="nav-item">
-          <img src="/images/usuarios/<%=locals.usuario.avatar %>"    width = '30' style= 'border-radius: 100%;'alt="">
-        </li>
       <% } else { %>  
   
-        <!--Cuando no estoy logueado debería ver esto-->
+                  <!--sin Loguear-->
         <li class="nav-item">
           <a class="nav-link" href="/login">Iniciar sesión</a>
         </li>
@@ -44,44 +51,18 @@
         </li>
       <%}%>  
       </ul>
-      <form class="d-flex text-end ">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      
+        <form class="d-flex  ">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+      
     </div>
   </nav>  
 
     
-    <!-- <picture id="brand">
-        <img src="/image/Logo/logoTeamGamerDHouse.jpeg" id="logo" alt="logo" >
-    </picture>
-    
   
-    <form class="search-box">
-      <input class="search-texto" type="search" name="search" id="search" placeholder="Que producto buscas?">
-      <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-  
-    <nav class="navigation" id="nav-user">
-      <a href="/login"> <i class="fa-solid fa-user"></i> Mi cuenta </a>
-      <a href="/compra"><i class="fa-solid fa-cart-shopping"></i>Mi carrito</a>
-    </nav>
-  
-    <nav class="navigation" id="main-nav">
-      <a href="#menu"><i class="fa-solid fa-bars"></i> Buscar por categoria</a>
-      <a href="/">Ofertas</a>
-      <a href="/productos">Productos</a>
-      <a href="/categoria/accesorios">Accesorios</a>
-    </nav>
-  
-    <nav id="menu">
-        <a  href="#"> <i class="fa-solid fa-times"></i></a>
-      <a href="/categoria/notebooks">Notebooks</a>
-      <a href="/categoria/computadoras">Computadoras</a>
-      <a href="/categoria/componentes">Componentes</a>
-      <a href="/categoria/accesorios">Accesorios</a>
-    </nav>
-   -->
 
   </header> 
   

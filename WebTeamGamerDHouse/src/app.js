@@ -9,6 +9,7 @@ const session = require('express-session');
 
 
 
+const userLogueadoMiddleware= require('./middlewares/userLogueadoMiddleware');
 const publicPath = path.join(__dirname, '../public');
 
 // REQUIERE USO DE RUTAS
@@ -36,15 +37,17 @@ app.set('view engine', 'ejs');
 
 //APP USE
 app.use(express.static(publicPath));
+app.use(session({
+    secret:'es un secreto',
+    resave: false,
+    saveUninitialized: false,
+}));
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
-app.use(session({
-    secret:'es un secreto',
-    resave: false,
-    saveUninitialized: false
-}));
+app.use(userLogueadoMiddleware);
+
 
 
 //APP USO DE LAS RUTAS
@@ -55,6 +58,8 @@ app.use(usuariosRoutes);
 app.use(productsRouter);
 app.use(generosRoutes);
 app.use(plataformaRutes);
+
+//APP USO DE RUTAS API
 app.use(apiRoutes);
 app.use(apiRoutesProductos);
 

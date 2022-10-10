@@ -14,15 +14,15 @@
                         <ul>
 
                             <li>
-                                <h3>Bienvenido <%= usuario.nombre%> <%= usuario.apellido%></h3>
+                                <h3>Bienvenido <%= user.nombre%> <%= user.apellido%></h3>
                                 
                             </li>
                             <li>
-                                <img src="/image/avatar/<%= usuario.imagenusuario%> " alt="">
+                                <img src="image/avatar/<%= user.imagenusuario%> " alt="">
                             </li>
                             
                             <li>
-                                <h3>Email: <%= usuario.email%> </h3>
+                                <h3>Email: <%= user.email%> </h3>
 
                             </li>
                         </ul>
@@ -40,7 +40,7 @@
             </section>
             <section>
 
-                <a href="/usuario/editar/<%= usuario.id %> ">
+                <a href="/usuario/editar/<%= user.id %> ">
                     <button  class="botonEnvio" type="submit">EDITAR USUARIO</button>
                 </a>
             </section>
