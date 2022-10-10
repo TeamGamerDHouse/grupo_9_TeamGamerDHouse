@@ -60,9 +60,9 @@ router.get('/login', guestMiddleware,usuarioController.login);
 
 router.post('/login',validations,usuarioController.logueado);
 
-router.get('/usuario/perfil', usuarioController.perfil);
+router.get('/profile', usuarioController.profile);
 
-
+router.get('/logout', usuarioController.logout);
 
 //ruta de busqueda de usuario por ID
 router.get('/usuarios', usuarioController.listadeUsuarios);
@@ -79,6 +79,8 @@ router.put('/usuario/editar/:id',uploadFile.single('avatar'),validations, usuari
 //DELETE
 
 router.delete('/usuario/eliminar/:id', usuarioController.eliminar)
+
+
 
 
 

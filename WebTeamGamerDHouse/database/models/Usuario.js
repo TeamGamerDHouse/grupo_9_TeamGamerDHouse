@@ -41,7 +41,7 @@ module.exports = (sequelize,dataTypes)=>{
             type:dataTypes.STRING
         },
         rol: {
-            type:dataTypes.STRING
+            type:dataTypes.INTEGER
         }
 
     };
