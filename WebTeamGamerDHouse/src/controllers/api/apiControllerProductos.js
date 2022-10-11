@@ -32,7 +32,7 @@ const apiControllerProductos = {
             nombre,
             descripcion,
             precio,
-            imagen,
+            imagen ,
             } =req.body;
     
         const newProducto ={
@@ -41,7 +41,7 @@ const apiControllerProductos = {
             nombre,
             descripcion,
             precio,
-            imagen,
+            imagen: req.file ? req.file.filename : productImage,
             }
         try {
             await db.Productos.create(newProducto);
