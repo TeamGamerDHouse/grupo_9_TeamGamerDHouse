@@ -48,13 +48,13 @@ module.exports = (sequelize,dataTypes)=>{
     Producto.associate =(models)=>{
 
         Producto.belongsTo(models.Genero,{
-            as:"pgeneros",
+            as:"genero",
             foreignKey:"genero_id"
 
         });
 
         Producto.belongsTo(models.Categoria,{
-            as:"pcategorias",
+            as:"categoria",
             foreignKey:"categoria_id"
     
             });

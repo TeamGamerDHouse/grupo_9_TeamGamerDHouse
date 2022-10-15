@@ -10,9 +10,9 @@ const apiControllerProductos = {
             {
                 include:[
                     {
-                    association : "pgeneros"},
+                    association : "categoria"},
                     {
-                    association : "pcategorias"    
+                    association : "genero"    
                     }]
             }
             
@@ -28,7 +28,15 @@ const apiControllerProductos = {
     },
     detalleProducto:(req,res)=>{
 
-        db.Productos.findByPk(req.params.id)
+        db.Producto.findByPk(req.params.id,
+            {
+                include:[
+                    {
+                        association : "categoria"},
+                        {
+                        association : "genero"    
+                        }]
+            })
             .then(producto=>{
                 return res.status(200).json({
                     data:producto,
@@ -57,7 +65,7 @@ const apiControllerProductos = {
             imagen: req.file ? req.file.filename : productImage,
             }
         try {
-            await db.Productos.create(newProducto);
+            await db.Producto.create(newProducto);
             res.status(200).json(newProducto)
             
         } catch (error) {

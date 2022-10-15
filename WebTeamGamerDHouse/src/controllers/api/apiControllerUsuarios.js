@@ -22,7 +22,9 @@ const apiControllerUsuarios ={
     // usuario por ID (byPK)
 
     detalleUsuario: (req,res)=>{
-        db.Usuario.findByPk(req.params.id)
+        db.Usuario.findByPk(req.params.id,{
+            
+        })
         .then(usuario => {
             return res.status(200).json({
                 data:usuario,
