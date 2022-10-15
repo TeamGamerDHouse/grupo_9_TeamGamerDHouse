@@ -58,7 +58,7 @@ module.exports = (sequelize,dataTypes)=>{
     Usuario.associate =(models)=>{
 
        
-        Usuario.belongsToMany(models.Productos,{
+        Usuario.belongsToMany(models.Producto,{
 
             as:"usuarios",
             through: "usuarioXproducto",
