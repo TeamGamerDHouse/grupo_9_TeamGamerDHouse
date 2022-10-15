@@ -15,8 +15,7 @@ const publicPath = path.join(__dirname, '../public');
 // REQUIERE USO DE RUTAS
 const usuariosRoutes = require('./routes/usuariosRoutes');
 const productsRouter = require('./routes/productsRoutes');
-const generosRoutes =require('./routes/generosRoutes');
-const plataformaRutes =require('./routes/plataformaRoutes');
+
 const indexRoutes = require ('./routes/indexRoutes');
 const apiRoutes =require('./routes/api/apiUsuariosRoutes');
 const apiRoutesProductos = require('./routes/api/apiProductosRoutes');
@@ -56,8 +55,7 @@ app.use(userLogueadoMiddleware);
 app.use(indexRoutes);
 app.use(usuariosRoutes);
 app.use(productsRouter);
-app.use(generosRoutes);
-app.use(plataformaRutes);
+
 
 //APP USO DE RUTAS API
 app.use(apiRoutes);

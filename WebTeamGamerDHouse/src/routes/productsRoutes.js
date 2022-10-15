@@ -52,7 +52,7 @@ router.get('/productEdit/:id',productosController.editar);
 
 router.put('/productos/:id',uploadFile.single('productImage'), productosController.editado );
 
-//router.delete('/productos/:id' )
+router.delete('/productos/:id',productosController.eliminar )
 
 
 

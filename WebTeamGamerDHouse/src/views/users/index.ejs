@@ -23,9 +23,9 @@
                 <% for(let i=0;i < productos.length; i++){%>
 
                   <li class="product-card">
-                    <div class="card" style="width: 18rem;">
-                      <img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="card-img-top" alt="...">
-                      <div class="card-body">
+                    <div class="card" style="width: 20rem;">
+                      <img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="rounded mx-auto d-block" alt="..."width="200" height="250">
+                      <div class="card-body border border-secondary">
                         <h5 class="card-title text-center "><%= productos[i].nombre%></h5>
                         <h5 class="card-title">Precio: $<%= productos[i].precio%></h5>
                         <a href="/producto/<%=productos[i].id%> " class="btn btn-primary">Ver Detalle</a>

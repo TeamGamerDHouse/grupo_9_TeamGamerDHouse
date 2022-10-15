@@ -5,7 +5,7 @@ const indexController ={
 
     vista: (req, res)=>{
 
-       db.Productos.findAll()
+       db.Producto.findAll()
           .then(productos=> {
               
             return res.render(path.join(__dirname, '../views/users/index.ejs'),{ productos:productos })

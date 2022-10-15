@@ -1,7 +1,7 @@
 
 module.exports = (sequelize,dataTypes)=>{
 
-    const alias = "Productos";
+    const alias = "Producto";
 
     const cols={
 
@@ -24,11 +24,11 @@ module.exports = (sequelize,dataTypes)=>{
         imagen:{
             type:dataTypes.STRING
         },
-        genero:{
-            type:dataTypes.STRING
+        genero_id:{
+            type:dataTypes.INTEGER
         },
-        plataforma:{
-            type:dataTypes.STRING
+        categoria_id:{
+            type:dataTypes.INTEGER
         }
        
 
@@ -46,6 +46,18 @@ module.exports = (sequelize,dataTypes)=>{
 
 
     Producto.associate =(models)=>{
+
+        Producto.belongsTo(models.Genero,{
+            as:"pgeneros",
+            foreignKey:"genero_id"
+
+        });
+
+        Producto.belongsTo(models.Categoria,{
+            as:"pcategorias",
+            foreignKey:"categoria_id"
+    
+            });
 
 
         Producto.belongsToMany(models.Usuario,{

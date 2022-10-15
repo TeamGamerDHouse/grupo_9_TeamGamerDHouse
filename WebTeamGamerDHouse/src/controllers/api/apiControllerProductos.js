@@ -1,3 +1,4 @@
+
 const db= require('../../../database/models/index');
 const OP= db.sequelize.Op;
 
@@ -5,7 +6,19 @@ const apiControllerProductos = {
 
     listarProductos:(req,res)=>{
 
-        db.Productos.findAll()
+        db.Producto.findAll(
+            {
+                include:[
+                    {
+                    association : "pgeneros"},
+                    {
+                    association : "pcategorias"    
+                    }]
+            }
+            
+               
+
+        )
             .then(productos => {
                  return res.status(200).json({
                     total:productos.length,

@@ -13,7 +13,7 @@ const productosController = {
 
     allProducts:(req,res)=>{
         
-        db.Productos.findAll()
+        db.Producto.findAll()
             .then(productos=>{
                 
                 return res.render(path.join(__dirname, '../views/products/productos.ejs'),{ productos:productos })
@@ -25,22 +25,37 @@ const productosController = {
     
     crear: (req,res)=>{
 
-         db.Productos.findAll()
-            .then(productos =>{
+        let gener = db.Genero.findAll();
+        let categ = db.Categoria.findAll();
 
-                res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{productos:productos})   
-    }
-        )
+        Promise
+        .all([gener,categ])
+        .then(([allgeneros, allcategorias]) =>{
+            return res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{allgeneros, allcategorias})
+        })
+
+        //  db.Producto.findAll({
+        //     include:[{
+        //         association : "pgeneros"
+        //     },{
+        //         association: "pcategorias"
+        //     }]
+        //  })
+        //     .then(productos =>{
+
+        //        res.render(path.join(__dirname, '../views/products/formProductos.ejs'),{productos:productos})   
+    
+        
 },
 
     createProducts : (req, res)=>{
         
-        db.Productos.create({
+        db.Producto.create({
 
             
 
-            genero:req.body.genero,
-            plataforma:req.body.plataforma,
+            genero_id: req.body.genero,
+            categoria_id :req.body.categoria,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
@@ -56,7 +71,7 @@ const productosController = {
 
     },
     productoDetalle: (req,res) =>{
-             db.Productos.findByPk(req.params.id)
+             db.Producto.findByPk(req.params.id)
                  .then(productos =>{
                      res.render(path.join(__dirname,'../views/products/detalleProductos.ejs'),{productos})
                  });
