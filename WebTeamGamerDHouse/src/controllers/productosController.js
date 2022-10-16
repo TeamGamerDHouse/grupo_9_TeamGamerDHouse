@@ -81,7 +81,7 @@ const productosController = {
    
     editar:(req,res)=>{
         
-        db.Productos.findByPk(req.params.id)
+        db.Producto.findByPk(req.params.id)
         .then(producto =>{
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{producto:producto})
         });
@@ -90,12 +90,12 @@ const productosController = {
     editado:(req,res)=>{
         
         db.Producto.update({
+            genero_id: req.body.genero,
+            categoria_id :req.body.categoria,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            genero: req.body.genero,
-            plataforma: req.body.plataforma,
             precio: req.body.precio,
-            imagenusuario: req.file ? req.file.filename : productImage
+            imagen: req.file ? req.file.filename : productImage
             
         
         },

@@ -48,8 +48,8 @@ const apiControllerProductos = {
     create: async (req,res) =>{        
 
         const {
-            genero,
-            plataforma,
+            genero_id,
+            categoria_id,
             nombre,
             descripcion,
             precio,
@@ -57,8 +57,8 @@ const apiControllerProductos = {
             } =req.body;
     
         const newProducto ={
-            genero,
-            plataforma,
+            genero_id,
+            categoria_id,
             nombre,
             descripcion,
             precio,
