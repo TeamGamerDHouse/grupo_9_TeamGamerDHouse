@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+
     <%- include('../partials/head.ejs') %>
-    <script src="js/formRegister.js"></script>
+    
+   
 <body>
     <%- include('../partials/header.ejs') %>
 
@@ -11,138 +12,163 @@
         <h2>Formulario de Registro de Usuario</h2>
 
 
-        <form  class="formularioRegistro" action='/register' method="post" enctype="multipart/form-data">
+        <form  class="formularioRegistro" id="formulario" action='/register' method="post" enctype="multipart/form-data">
             
             
-            <div class="etiqueta">
+            <div class="etiqueta" id="grupo-nombre">
+                <label for="nombre" class="grupo__label">Ingrese su Nombre:</label>
+                    <div class="formulario__grupo-input">
+                        <input class="formulario__input" type="text"
+                            name="nombre" 
+                            id="nombre" 
+                            placeholder="Minimo 2 caracteres-sin simbolos"
+                            value="<%=locals.old && old.nombre ? old.nombre :"" %> ">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
 
-                <label>Ingrese su Nombre:</label>
-                    <input class="input" type="text" name="nombre" id="nombre" value="<%=locals.old && old.nombre ? old.nombre :"" %> ">
-                    <div class="text-danger">
+                                <div class="text-danger">
+                                    <% if ( locals.errors && errors.nombre){ %>
+                                        <p> <%= errors.nombre.msg %> </p>
+                                    <% } %> 
+                                </div>
+                            </div>
                         
-                        <% if ( locals.errors && errors.nombre){ %>
-                            <p> <%= errors.nombre.msg %> </p>
-                        <% } %> 
-                       
-                    </div>
-
-                 
             </div>
                  
-                    
-            
-            <div class="etiqueta">
-                <label>Ingrese su Apellido:</label>
-                    <input class="input" type="text" name="apellido" id="apellido"
-                    value="<%=locals.old && old.apellido ? old.apellido :"" %>">
-
-                    <div class="text-danger">
-                        
-                        <% if ( locals.errors && errors.apellido){ %>
-                            <p> <%= errors.apellido.msg %> </p>
-                        <% } %> 
-                       
+            <div class="etiqueta" id="grupo-apellido">
+                <label for="apellido" class="grupo__label">Ingrese su Apellido:</label>
+                    <div class="formulario__grupo-input">
+                        <input class="formulario__input" type="text" 
+                            name="apellido" 
+                            id="apellido"
+                            placeholder="Minimo 2 caracteres-sin simbolos"
+                            value="<%=locals.old && old.apellido ? old.apellido :"" %>">  
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>                
+                                <div class="text-danger">
+                                    <% if ( locals.errors && errors.apellido){ %>
+                                        <p> <%= errors.apellido.msg %> </p>
+                                    <% } %> 
+                                </div>
                     </div>
             </div>
-                  
-                   
-            
-            
-            <div class="etiqueta">
-                <label >Ingese su Email</label>
-                    <input class="input" type="email" name="email" id="email" value="<%=locals.old && old.email ? old.email:"" %>" >
+             
+            <div class="etiqueta" id="grupo-email">
+                <label for="email" class="grupo__label">Ingese su Email</label>
+                <div class="formulario__grupo-input">
 
-                    <div class="text-danger">
-
-
-                        <% if ( locals.errors && errors.email){ %>
-                            <%= errors.email.msg %> 
-                        
-                            <% } %> 
-                         
-                    </div>
-
-            </div>
-                     
-                        
-            
-            <div class="etiqueta">
-                <label>Ingrese su Contraseña:</label>
-                    <input class="input" type="password" name="password" id="password">
-                    <div class="text-danger">                    
-                            
-                    </div>
-                     
-                    
-            </div>
-                        
-            <div class="etiqueta">
-                <label>Ingrese su Pais:</label>
-
-                    <input type="text" class="input" name="pais" id="pais" value="<%=locals.old && old.pais ? old.pais :"" %>">
-                    <div class="text-danger">
-
-                        <% if ( locals.errors && errors.pais){ %>
-                            <%= errors.pais.msg %> 
-                            <% } %> 
-                            
-                    </div>
-                </div>
-            
-            <div class="etiqueta">
-                    <label>Ingrese su Ciudad </label>
-                        <input type="text" class="input" name="ciudad" id="ciudad" value="<%=locals.old && old.ciudad ? old.ciudad :"" %>">
-                        <div class="text-danger">
-                            <% if ( locals.errors && errors.ciudad){ %>
-                                <%= errors.ciudad.msg %> 
+                    <input class="formulario__input" type="email"
+                        name="email" 
+                        id="email" 
+                        placeholder="Debe ser un Email "
+                        value="<%=locals.old && old.email ? old.email:"" %>" >
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i> 
+                            <div class="text-danger">
+                                <% if ( locals.errors && errors.email){ %>
+                                    <%= errors.email.msg %> 
                                 <% } %> 
-                                
+                            </div>
+                </div>
+            </div>
 
-                        </div>
+            <div class="etiqueta" id="grupo-password">
+                <label for="password" class="grupo__label">Ingrese su Contraseña:</label>
+                    <div class="formulario__grupo-input">
+                        <input class="formulario__input" type="password" 
+                            name="password" 
+                            id="password"
+                            placeholder="Debe tener un minimo de 6 caracteres ">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>                  
+                                <div class="text-danger">                    
+                                
+                                </div>
+                       
+
+                    </div>
+            </div>
+                        
+            <div class="etiqueta" id="grupo-pais">
+                <label for="password" class="grupo__label">Ingrese su Pais:</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" 
+                            name="pais" 
+                            id="pais" 
+                            placeholder="Ingrese Pais"
+                            value="<%=locals.old && old.pais ? old.pais :"" %>">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i> 
+                                <div class="text-danger">
+                                    <% if ( locals.errors && errors.pais){ %>
+                                        <%= errors.pais.msg %> 
+                                    <% } %> 
+                                </div>
+                    </div>
+            </div>
+            
+            <div class="etiqueta" id="grupo-ciudad">
+                    <label for="ciudad" class="grupo__label">Ingrese su Ciudad </label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" 
+                                name="ciudad" 
+                                id="ciudad" 
+                                placeholder="Ingrese su Ciudad"
+                                value="<%=locals.old && old.ciudad ? old.ciudad :"" %>">
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                    <div class="text-danger">
+                                        <% if ( locals.errors && errors.ciudad){ %>
+                                            <%= errors.ciudad.msg %> 
+                                        <% } %> 
+                                    </div>
+                    </div>
             </div>
                 
-            <div class="etiqueta">
-                        <label>Ingrese su Calle:</label>
-                            <input type="text" class="input" name="calle" id="calle" value="<%=locals.old && old.calle ? old.calle :"" %>">
-                            <div class="text-danger">
-
-                                <% if ( locals.errors && errors.calle){ %>
-                                    <%= errors.calle.msg %> 
-                                <% } %> 
-                                    
-
-                            </div>
+            <div class="etiqueta" id="grupo-calle">
+                    <label for="calle" class="grupo__label">Ingrese su Calle:</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" 
+                            name="calle" 
+                            id="calle" 
+                            placeholder="Ingrese su Calle"
+                            value="<%=locals.old && old.calle ? old.calle :"" %>">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                <div class="text-danger">
+                                    <% if ( locals.errors && errors.calle){ %>
+                                        <%= errors.calle.msg %> 
+                                    <% } %> 
+                                </div>
+                    </div>
             </div>    
 
-            <div class="etiqueta">
-                        <label>Ingrese su numero :</label>
-                            <input type="number" class="input" name="numero" id="numero" value="<%=locals.old && old.numero ? old.numero :"" %>">
-                            <div class="text-danger">
+            <div class="etiqueta" id="grupo-numero">
+                <label for="numero" class="grupo__label">Ingrese su numero :</label>
+                    <div class="formulario__grupo-input">
+                        <input type="number" class="formulario__input" 
+                            name="numero" 
+                            id="numero" 
+                            placeholder="Ingrese su numero"
+                            value="<%=locals.old && old.numero ? old.numero :"" %>">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                <div class="text-danger">
+                                    <% if ( locals.errors && errors.numero){ %>
+                                        <%= errors.numero.msg %> 
+                                    <% } %> 
+                                </div>
 
-                                <% if ( locals.errors && errors.numero){ %>
-                                     <%= errors.numero.msg %> 
-                                <% } %> 
-                                        
-
-                            </div>
                 </div>
+            </div>
 
-            <div class="etiqueta">
-                    <label>Ingrese su Foto de Perfil:</label>
-                        <input  class="input" type="file" name="avatar" accept="image/*"  >
+            <div class="etiqueta" id="grupo-avatar">
+                <label for="avatar" class="grupo__label">Ingrese su Foto de Perfil:</label>
+                    <input  class="formulario__inputAvatar" type="file" 
+                        name="avatar" 
+                        accept="image/*">
                        
-                    </div>
-                         
-                        
-
-             
-            
-             
-             <div class="etiqueta">
-            
-                <input  class="botonEnvio" type="submit" id="boton"value="Registrarme">
-            
-                    <p><a href="login">Usuario ya registrado?</a></p>
+            </div>
+             <br>
+            <div class="etiqueta">
+                <input  class="botonEnvio" type="submit" 
+                    id="boton" 
+                    value="Registrarme">
+                        <p>
+                            <a href="login">Usuario ya registrado?</a>
+                        </p>
             </div> 
             
 
@@ -155,7 +181,10 @@
     </main>
    
     <%- include('../partials/footer.ejs')%>
+    <script src="/js/formRegister.js"></script>
+    <script src="https://use.fontawesome.com/cc5e399d28.js"></script>
 
   
 </body>
+
 </html>
