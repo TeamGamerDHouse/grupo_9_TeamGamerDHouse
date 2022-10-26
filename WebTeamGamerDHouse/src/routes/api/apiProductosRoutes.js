@@ -21,6 +21,7 @@ const uploadFile = multer({ storage });
 router.get('/api/productos',apiControllerProductos.listarProductos);
 router.get('/api/productos/:id',apiControllerProductos.detalleProducto);
 router.post('/api/productos/create',uploadFile.single('imagen'),apiControllerProductos.create);
+router.get('/api/producto/ultimo',apiControllerProductos.ultimo);
 //router.get('/api/productos/recomendado',apiControllerProductos.recomendado);
 
 module.exports = router;

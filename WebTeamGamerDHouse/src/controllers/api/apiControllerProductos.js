@@ -19,12 +19,33 @@ const apiControllerProductos = {
                
 
         )
-            .then(productos => {
-                 return res.status(200).json({
+            // .then(productos => {
+            //      return res.status(200).json({
+            //         total:productos.length,
+            //         data: productos,
+            //         status:200
+            // })});
+
+            .then(productos=>{
+                const productosMap = productos.map(e=>{
+                    return{
+                        id:e.id,
+                        nombre:e.nombre,
+                        descripcion:e.descripcion,
+                        precio:e.precio,
+                        categoria:e.categoria.nombre,
+                        genero:e.genero.nombre,
+                        imagen:`/image/imagenArticulos/${e.imagen}`
+                        
+                    }
+                })
+                return res.status(200).json({
                     total:productos.length,
-                    data: productos,
+                    data: productosMap,
                     status:200
-            })});
+                })
+            });
+
     },
     detalleProducto:(req,res)=>{
 
@@ -75,6 +96,48 @@ const apiControllerProductos = {
     
             
     },
+    ultimo:(req,res)=>{
+        db.Producto.findAll({
+            
+            include:[
+                    {
+                        association : "categoria"},
+                        {
+                        association : "genero"    
+                        }],
+            
+            order:[['id','DESC']],
+            limit:1
+        },
+       )
+       .then(productos=>{
+        const productosMap = productos.map(e=>{
+            return{
+                id:e.id,
+                nombre:e.nombre,
+                descripcion:e.descripcion,
+                precio:e.precio,
+                categoria:e.categoria.nombre,
+                genero:e.genero.nombre,
+                imagen:`/image/imagenArticulos/${e.imagen}`
+                
+            }
+        })
+        return res.status(200).json({
+            total : productos.length,
+            data: productosMap,
+            status:200
+        })
+    });
+        // .then(productos=>{
+        //    return res.status(200).json({
+        //     total: productos.length,
+        //     data: productos,
+        //     status:200
+
+        //     })
+        // })
+    }
 
     
 

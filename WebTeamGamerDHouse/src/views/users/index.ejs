@@ -16,7 +16,7 @@
       </picture>
       
       <section class="products" id="gamesps">
-          <h2>GAMES</h2>
+          <h2>NOVEDADES EN DHOUSE!!</h2>
 
           <ul class="product-list">
               <% if(Array.isArray(productos)){%>
@@ -25,9 +25,9 @@
                   <li class="product-card">
                     <div class="card" style="width: 20rem;">
                       <img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="rounded mx-auto d-block" alt="..."width="200" height="250">
-                      <div class="card-body border border-secondary">
-                        <h5 class="card-title text-center "><%= productos[i].nombre%></h5>
-                        <h5 class="card-title">Precio: $<%= productos[i].precio%></h5>
+                      <div class="card-body bg-dark text-white">
+                        <h6 class="card-title text-center text-primary  fw-bold fst-italic "><%= productos[i].nombre%></h6>
+                        <h6 class="card-title">Precio: $<%= productos[i].precio%></h6>
                         <% if(productos[i].categoria){ %>
                             <h5 class="card-title">Consola : <%=productos[i].categoria.nombre%> </h5>
                             <% } %>  
@@ -38,6 +38,8 @@
                   </li>
           <% } %> 
           <% } %> 
+
+        </section>
         
     </main>
     

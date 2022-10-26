@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require ('path')
-
+const autoriza = require('../middlewares/autoriza')
 
 //Requiere controloador Usuarios
 const usuarioController = require('../controllers/usuariosController');
@@ -34,7 +34,7 @@ const validations =[
     body('nombre').notEmpty().withMessage('Debe Completar el campo de Nombre'),
     body('apellido').notEmpty().withMessage('Debe Completar el campo de Apellido'),
     body('email').notEmpty().withMessage('Debe Completar el campo de Email').bail()
-        .isEmail().withMessage('Debe ser un email valido'),
+                .isEmail().withMessage('Debe ser un email valido'),
     body('password').notEmpty().withMessage('Debe Completar el campo password'),
     body('pais').notEmpty().withMessage('Debe completar el campo Pais'),
     body('ciudad').notEmpty().withMessage('Debe completar el campo Ciudad'),
@@ -65,13 +65,13 @@ router.get('/profile', usuarioController.profile);
 router.get('/logout', usuarioController.logout);
 
 //ruta de busqueda de usuario por ID
-router.get('/usuarios', usuarioController.listadeUsuarios);
+router.get('/usuarios',autoriza, usuarioController.listadeUsuarios);
 
 router.get('/usuario/:id',usuarioController.detalleUsuario);
 
 //editar
 
-router.get('/usuario/editar/:id', usuarioController.editar);
+router.get('/usuario/editar/:id',usuarioController.editar);
 
 router.put('/usuario/editar/:id',uploadFile.single('avatar'),validations, usuarioController.editado);
 

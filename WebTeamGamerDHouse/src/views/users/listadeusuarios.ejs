@@ -2,36 +2,52 @@
 <html lang="en">
     <%- include('../partials/head.ejs') %>
 <body>
-   <%- include('../partials/header.ejs') %>
+	
+	<%- include('../partials/header.ejs') %>
+    <div class="container-fluid justify-content-center bg-dark" id="main-container">
+	
+				
+		
+		<section class="products" id="gamesps">
+			<h2>LISTA DE USUARIOS  </h2>
+			<br>
+				<ul class="product-list">
+					<% if(Array.isArray(usuarios)){%>
+										
+						<% for(let i=0;i < usuarios.length; i++){%>
+						
+							
+							 
+								<li class="product-card">
+								  <div class="card" style="width: 20rem;">
+									<img src="/image/avatar/<%= usuarios[i].imagenusuario %> " class="rounded mx-auto d-block" alt="usuario"width="200" height="250">
+									<div class="card-body bg-dark text-white">
+									  <h6 class="card-title text-center text-primary  fw-bold fst-italic "><%= usuarios[i].nombre%> <%= usuarios[i].apellido%></h6>
+									  <h6 class="card-title">email: <%= usuarios[i].email%></h6>
+									  <a href="/usuario/<%=usuarios[i].id%> " class="btn btn-primary">Ver Detalle</a>
+									</div>
+								  </div>
+								  
+								</li>
+							<% } %>
+						<% } %> 
+				
+			  </section>
+		
+		<!-- contenido seccion -->
+		
 
-   <main>
+		
+	
+		<!-- FIN contenido seccion -->
 
-    <h2>Lista de usuarios</h2>
+		<!-- fin del IF para ver si esta logueado -->
+		
 
-    <ol>
-        <% for( let i = 0; i < usuarios.length; i++ ) { %>
-        
-            <li>
-                <a href="/usuario/<%=usuarios[i].id%> "><h3>Nombre: <%= usuarios[i].nombre%> <%=usuarios[i].apellido%> </h3></a>
-                              
-                
-            </li>
-        <% } %>
-    </ol>
-
-
-
-
-
-   </main>
-
-
-
-
-
-
-   <%- include('../partials/footer.ejs') %>
-
+		<!-- Footer -->
+		<%- include('../partials/footer.ejs') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
     
     
 </body>
