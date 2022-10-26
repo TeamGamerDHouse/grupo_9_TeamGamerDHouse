@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: #F1F1F1;
+    background-color: #111010;
     font-family: 'Roboto', sans-serif;}
 
 /*Encabezado*/
@@ -148,7 +148,7 @@ body{
 
 /* MAIN */
     main{
-        background-color: rgb(192, 186, 186);
+        background-color: rgb(5, 5, 5);
     }
 
 
@@ -162,10 +162,11 @@ body{
         
       }
       .products h2{
+        font-family: cursive;
         text-transform: uppercase;
-        padding: 1rem 1.5rem 0;
-        border-bottom: .05rem solid #0FF37A;
-        font-size: 2rem;
+        padding: 1rem 1.5rem 1rem;
+        border: .05rem solid #0FF37A;
+        font-size: 3rem;
         color:#0FF37A
     
       }
@@ -225,4 +226,36 @@ body{
         align-items: center;
         color:#0FF37A;
         text-decoration: none;
+      }
+      .usuario{
+
+        
+        padding-top: 20px;
+        margin-left: 50px;
+        color:white;
+        align-items: center;
+        
+      }
+      .usuario li{
+        list-style: none;
+        font-family: cursive;
+        padding-bottom: 10px;
+
+      }
+      .usuario img{
+
+        border: #0FF37A solid 2px;
+      }
+
+      .usuario h2{
+        color:#0FF37A  ;
+        
+        border-radius: 5px;
+      }
+
+      .products h4{
+        color:#0FF37A  ;
+        
+        border-radius: 5px;
+
       }

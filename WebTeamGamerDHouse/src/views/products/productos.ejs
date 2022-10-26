@@ -2,32 +2,140 @@
 <html lang="en">
 <%- include('../partials/head.ejs') %> 
 <body>
-<%- include('../partials/header.ejs') %>
-    
-    <main class="containerProductos">
+    <div class="container-fluid justify-content-center bg-dark" id="main-container">
+		
+		<%- include('../partials/header.ejs') %>
 
-        <h2> lista de Productos </h2>
-                <% if(Array.isArray(productos)){%>
-                    <% for(let i=0;i < productos.length; i++){%>
-                    <li>
-                            <p>
-                                <h5>Name: <%= productos[i].nombre%></h5>
-                            </p>
-                            <p>
-                                <h5>Descripcion: <%= productos[i].descripcion%></h5>
-                            </p>
-                            <p>
-                                <h5>Precio: <%= productos[i].precio%></h5>
-                            </p>
-                            <img src="/image/imagenArticulos/<%=productos[i].imagen%> " alt="">
-                        </li>
-                    <%}%>
-                  <%}else{%>
-            <%}%>
-       
- 
-    </main> 
+			<div class="row bg-primary">
+				<div class="col-12 text-center mt-3">
+					<h1>TODO EL CATALOGO</h1>
+				</div>
+			
+	</div>
+		
+	<section class="products" id="gamesps">
+		<h2>PLAYSTATION 4 </h2>
+		<br>
+			<ul class="product-list">
+				<% if(Array.isArray(productos)){%>
+									
+					<% for(let i=0;i < productos.length; i++){%>
+					
+						<% if (productos[i].categoria.id === 1) { %>
+						 
+							<li class="product-card">
+							  <div class="card" style="width: 20rem;">
+								<img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="rounded mx-auto d-block" alt="..."width="200" height="250">
+								<div class="card-body bg-dark text-white">
+								  <h6 class="card-title text-center text-primary  fw-bold fst-italic "><%= productos[i].nombre%></h6>
+								  <h6 class="card-title">Precio: $ <%= productos[i].precio%></h6>
+								  <% if(productos[i].categoria){ %>
+									  <h5 class="card-title">Consola : <%=productos[i].categoria.nombre%> </h5>
+									  <% } %>  
+								  <a href="/producto/<%=productos[i].id%> " class="btn btn-primary">Ver Detalle</a>
+								</div>
+							  </div>
+							  
+							</li>
+						<% } %>
+					<% } %> 
+			<% } %> 
+		  </section>
+		  <section class="products" id="gamesps">
+			<h2>PLAYSTATION 5 </h2>
+			<br>
+				<ul class="product-list">
+					<% if(Array.isArray(productos)){%>
+										
+						<% for(let i=0;i < productos.length; i++){%>
+						
+							<% if (productos[i].categoria.id === 2) { %>
+							 
+								<li class="product-card">
+								  <div class="card" style="width: 20rem;">
+									<img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="rounded mx-auto d-block" alt="..."width="200" height="250">
+									<div class="card-body bg-dark text-white">
+									  <h6 class="card-title text-center text-primary  fw-bold fst-italic "><%= productos[i].nombre%></h6>
+									  <h6 class="card-title">Precio: $ <%= productos[i].precio%></h6>
+									  <% if(productos[i].categoria){ %>
+										  <h5 class="card-title">Consola : <%=productos[i].categoria.nombre%> </h5>
+										  <% } %>  
+									  <a href="/producto/<%=productos[i].id%> " class="btn btn-primary">Ver Detalle</a>
+									</div>
+								  </div>
+								  
+								</li>
+							<% } %>
+						<% } %> 
+				<% } %> 
+			  </section>
+			  <section class="products" id="gamesps">
+				<h2>PC GAMES </h2>
+				<br>
+					<ul class="product-list">
+						<% if(Array.isArray(productos)){%>
+											
+							<% for(let i=0;i < productos.length; i++){%>
+							
+								<% if (productos[i].categoria.id === 3) { %>
+								 
+									<li class="product-card">
+									  <div class="card" style="width: 20rem;">
+										<img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="rounded mx-auto d-block" alt="..."width="200" height="250">
+										<div class="card-body bg-dark text-white">
+										  <h6 class="card-title text-center text-primary  fw-bold fst-italic "><%= productos[i].nombre%></h6>
+										  <h6 class="card-title">Precio: $ <%= productos[i].precio%></h6>
+										  <% if(productos[i].categoria){ %>
+											  <h5 class="card-title">Consola : <%=productos[i].categoria.nombre%> </h5>
+											  <% } %>  
+										  <a href="/producto/<%=productos[i].id%> " class="btn btn-primary">Ver Detalle</a>
+										</div>
+									  </div>
+									  
+									</li>
+								<% } %>
+							<% } %> 
+					<% } %> 
+				  </section>
+				  <section class="products" id="gamesps">
+					<h2>XBOX</h2>
+					<br>
+						<ul class="product-list">
+							<% if(Array.isArray(productos)){%>
+												
+								<% for(let i=0;i < productos.length; i++){%>
+								
+									<% if (productos[i].categoria.id === 4) { %>
+									 
+										<li class="product-card">
+										  <div class="card" style="width: 20rem;">
+											<img src="/image/imagenArticulos/<%=productos[i].imagen%>" class="rounded mx-auto d-block" alt="..."width="200" height="250">
+											<div class="card-body bg-dark text-white">
+											  <h6 class="card-title text-center text-primary  fw-bold fst-italic "><%= productos[i].nombre%></h6>
+											  <h6 class="card-title">Precio: $ <%= productos[i].precio%></h6>
+											  <% if(productos[i].categoria){ %>
+												  <h5 class="card-title">Consola : <%=productos[i].categoria.nombre%> </h5>
+												  <% } %>  
+											  <a href="/producto/<%=productos[i].id%> " class="btn btn-primary">Ver Detalle</a>
+											</div>
+										  </div>
+										  
+										</li>
+									<% } %>
+								<% } %> 
+						<% } %> 
+					  </section>
 
-    <%- include('../partials/footer.ejs') %> 
+
+
+
+
+
+
+		  <!-- Footer -->
+		<%- include('../partials/footer.ejs') %>
+		<!-- ↓↓ aca termina el DIV main container ↓↓ -->
+	</div>
+
 </body>
 </html>

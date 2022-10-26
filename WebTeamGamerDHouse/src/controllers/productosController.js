@@ -2,6 +2,7 @@
 
 const path = require('path');
 const db = require('../../database/models/index');
+const { Op } = require("sequelize");
 
 
 
@@ -13,10 +14,22 @@ const productosController = {
 
     allProducts:(req,res)=>{
         
-        db.Producto.findAll()
+        db.Producto.findAll({
+             include:[
+                {
+                association : "categoria"},
+                {
+                association : "genero"    
+                }]},{
+                    order:[
+                        ['categoria_id','ASC']
+                        ['nombbre', 'ASC']
+                ]
+                }
+        )
             .then(productos=>{
-                
-                return res.render(path.join(__dirname, '../views/products/productos.ejs'),{ productos:productos })
+                                
+                return res.render(path.join(__dirname, '../views/products/productos.ejs'),{ productos })
             });
 
     },
@@ -116,8 +129,26 @@ const productosController = {
      });
     
         res.redirect('/productos')
-}
+},
+    buscar :  (req,res) =>{
+        
+        db.Producto.findAll({
+           
+            where:{
+                nombre : {[Op.like]:`%${req.query}%`}
+            }
+        }).then(productos =>{
+            res.render(path.join(__dirname,'../views/products/productos.ejs'),{ productos }) 
 
+        }).catch(error =>{
+            console.log(error)
+        })
+
+
+       
+    }
+
+    
 }
 
 

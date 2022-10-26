@@ -4,7 +4,7 @@ const {body}= require('express-validator')
 const multer = require('multer');
 const path = require('path');
 const productosController = require('../controllers/productosController');
-
+const autoriza = require('../middlewares/autoriza')
 
 // validaciones
 
@@ -38,8 +38,10 @@ router.get('/producto/:id',productosController.productoDetalle);
 
 router.get('/productos', productosController.allProducts);
 
+router.get('/productos/buscar',productosController.buscar);
 
-router.get('/productos/create',productosController.crear);
+
+router.get('/productos/create',autoriza,productosController.crear);
 
 
 router.post('/productos/create',uploadFile.single('imagen'), productosController.createProducts);
@@ -50,9 +52,9 @@ router.post('/productos/create',uploadFile.single('imagen'), productosController
 
 router.get('/productedit/:id',productosController.editar);
 
-router.put('/productos/:id',uploadFile.single('productImage'), productosController.editado );
+router.put('/productos/:id',autoriza,uploadFile.single('productImage'), productosController.editado );
 
-router.delete('/productos/:id',productosController.eliminar )
+router.delete('/productos/:id',autoriza,productosController.eliminar )
 
 
 

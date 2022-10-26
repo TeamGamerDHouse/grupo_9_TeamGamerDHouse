@@ -2,18 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(15, 15, 15);
-    background: rgb(206, 205, 209);
+    color: rgb(255, 248, 248);
+    background: rgb(15, 15, 15);
 
 }
     
 .registro h2{
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-family: 'calibri';
-    text-align: center;
-    padding-top: 40px;
-    border-bottom: 1px solid white;
+        text-align: center;
+        font-family: cursive;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem 1rem;
+        border: .05rem solid #0FF37A;
+        font-size: 3rem;
+        color:#0FF37A
 
     
 }
@@ -51,14 +52,14 @@
 .formularioRegistro .input{
 
     width: 100%;
-    background: #24303c;
+    background: #f7f8fa;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 16px;
     border: 1px solid blue;
     font-family: 'calibri';
     font-size: 18px;
-    color: white;
+    color: rgb(15, 15, 15);
     margin-top: 15px;
     text-align: center;
 
@@ -93,10 +94,11 @@
 
 .botonEnvio{
 
-    width: 100%;
-    background: #24303c;
+    margin-left: 40px;
+    width: 40%;
+    background: #f7f8fa;
     height: 40px;
-    color: white;
+    color: rgb(15, 15, 15);
     font-family: 'calibri';
     font-size: 22px;
     border-radius: 10px;
@@ -117,6 +119,9 @@
 
 
 }
+label{
+    color:#0FF37A   
+}
 
 .separador{
 
@@ -126,6 +131,13 @@
     padding: 20px;
     text-align: right;
     border-top: 1px solid white;
+    color: white;
+}
+
+.forget-password{
+
+    color:#0FF37A
+
 }
 
 .texto-error{

@@ -7,8 +7,12 @@
         <main>
             <section class="usuario">
                 <div>
+                    <% if (usuario.rol === 9) { %>
+                        
+                        <h2>Usuario Administrador ID N° <%= usuario.id%>  </h2>
 
-                    <h2>Usuario Solictado:  ID N° <%= usuario.id%>  </h2>
+                        <% } %>
+
 
                 </div>    
                     <div>
